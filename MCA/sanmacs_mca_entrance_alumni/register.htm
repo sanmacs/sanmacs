@@ -1,0 +1,513 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<TITLE>Sanmacs Alumni Registration Form</TITLE>
+<style type="text/css">
+<!--
+.style2 {
+	color: #FF0000;
+	font-style: italic;
+}
+-->
+</style>
+<HEAD>
+<link rel=stylesheet type=text/css href=http://www.sanmacs.com/MCA/images1/sanmacs2.css>
+<link rel=stylesheet type=text/css href=http://www.sanmacs.com/MCA/images1/sanmacs2.1.css>
+<link rel=stylesheet type=text/css href=http://www.sanmacs.com/MCA/mca_images/mca.css>
+
+
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Keywords" content="Sanmacs Alumni, Registration Form, Sanmacsians, MCA Entrance, MCA">
+<meta name="description" content="Sanmacs Alumni Registration Form">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="COPYRIGHT" CONTENT="Copyright © 1994 Sanmacs India, all rights reserved">
+<META NAME="AUTHOR" CONTENT="Sanmacs India">
+<META NAME="CONTACT_ADDR" CONTENT="Registered Office: 309 & 313 Partap Chambers, Gurudwara Road, Karol Bagh, New Delhi - 110005 Phone: 91-11-28757630, 28757911, 32917966 Corporate Office: SAI SANMACS Plaza, Plot No.6-A, Community Centre, DDA, Sector - 8, Rohini, Delhi - 85 (Near Kendriya Vidyalaya) Phone: 32458354, 32522575, 47094119 E-mail: info@sanmacs.com, webmaster@sanmacs.com">
+<META NAME="DISTRIBUTION" CONTENT="Global">
+<META NAME="RESOURCE-TYPE" CONTENT="document">
+<META HTTP-EQUIV="IMAGETOOLBAR" CONTENT="false">
+<style type="text/css">
+DIV.Object1 { position:absolute; top:0px; left:0px; z-index:1;}
+DIV.Object2 { position:absolute; top:88px; left:895px; width:100px; z-index:2;}
+DIV.Object3 { position:absolute; top:-72px; left:400px; z-index:3;}
+
+a {text-decoration:none;}
+
+</style>
+
+
+<style type="text/css">
+h1 { font-family: Arial, Helvetica, sans-serif; font-size: 30px; margin-bottom: 15px; margin-top: 15px; font-weight:bold; color:#000000; letter-spacing:3px; word-spacing:3px; filter: progid:DXImageTransform.Microsoft.shadow(color='#000000',strength=3); width:703px}
+h2 { font-family: Arial, Helvetica, sans-serif; font-size: 25px; margin-bottom: 0px; margin-top: 0px; font-weight:bold; color:#026D7D; letter-spacing:0px; word-spacing:0px; filter: progid:DXImageTransform.Microsoft.shadow(color='#000000',strength=5) }
+h3 {font-family: Arial, Helvetica, sans-serif; margin-bottom: 5px; margin-top: 5px; font-size: 11px; color:#FFFFFF; letter-spacing:1px; word-spacing:2px;}
+</STYLE>
+
+<SCRIPT Language="Javascript">
+function check()
+{
+	var a;
+        a=email(document.f.email) && name(document.f.name) && isDate(); 
+	if (a)
+	{
+		alert("Thanks for submitting the form.");
+		f.submit();
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function email(val1)
+{
+	var em,c1,d1,e1,g1,h,str1;
+	em=val1.value;
+	str1="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890@._";
+	c1=em.length;
+	if (c1<1)
+	{
+    	alert("This field cannot be empty");
+  	  	val1.focus();
+     	return false;
+  	}
+	else
+	{
+    	d1=str1.length;
+	 	for (k=0; k<c1; k++)
+		{
+			e1=em.charAt(k);
+			g1=str1.indexOf(e1);
+			if (g1 < 0)
+			{
+				err(val1);
+				return false;
+			}
+		}
+		if (em.indexOf('@')<0)
+		{
+			err(val1);
+			return false;
+		}
+		if (em.charAt(0)=='@')
+		{
+			err(val1);
+			return false;
+		}
+
+		if (em.charAt(c1-1)=='.')
+		{
+			err(val1);
+			return false;
+		}
+		var dat,cnt,cnt1;
+		cnt=0;
+		cnt1=0;
+		for (s=0; s<c1; s++)
+		{
+			dat=em.charAt(s);
+			if (dat=='@')
+				cnt=cnt+1;
+			if (dat=='.')
+				cnt1=cnt1+1;
+		}
+		if ((cnt >1) || (cnt1>3))
+		{
+			err(val1);
+			return false;
+		}
+	}
+	return true;
+}
+
+function name(val1)
+{
+	var em,c1,d1,e1,g1,h,str1;
+	em=val1.value;
+	str1="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+	c1=em.length;
+	if (c1<1)
+	{
+    	alert("This field cannot be empty");
+  	  	val1.focus();
+     	return false;
+  	}
+	else
+	{
+    	d1=str1.length;
+	 	for (k=0; k<c1; k++)
+		{
+			e1=em.charAt(k);
+			g1=str1.indexOf(e1);
+			if (g1 < 0)
+			{
+				alert ("Enter a valid name.");
+				val1.focus();
+				val1.select();
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+function isDate()
+{
+	var yy,mm,dd;
+	var im,id,iy;
+	var present_date = new Date();
+	yy = 1900 + present_date.getYear();
+	if (yy > 3000)
+	{
+		yy = yy - 1900;
+	}
+	mm = present_date.getMonth();
+	dd = present_date.getDate();
+	im = document.forms[0].birth_month.selectedIndex;
+	id = document.forms[0].birth_day.selectedIndex;
+	iy = document.forms[0].birth_year.selectedIndex;
+	var entered_month = document.forms[0].birth_month.options[im].value;
+	var invalid_month = document.forms[0].birth_month.options[im].value-1; 
+	var entered_day = document.forms[0].birth_day.options[id].value; 
+	var entered_year = document.forms[0].birth_year.options[iy].value; 
+	if ( (entered_day == 0) || (entered_month == 0) || (entered_year == 0) )
+	{
+		alert("Please enter your birthday");
+		return false;
+	}
+	if ( is_greater_date(entered_year,entered_month,entered_day,yy,mm,dd) && is_valid_day(invalid_month,entered_day,entered_year) )
+	{
+		return true; 
+	}
+	return false;
+}
+
+//Greater day function
+function is_greater_date(entered_year,entered_month,entered_day,yy,mm,dd)
+{
+	if (parseInt(entered_year) > yy)
+	{
+		alert("The birthday field is entered incorrectly. The year entered exceeds the current year.");
+		return false;
+	}
+	if (parseInt(entered_year) == yy)
+	{
+		if (parseInt(entered_month) > mm)
+		{
+			alert("The birthday field is entered incorrectly.");
+			return false;
+		}
+		if (parseInt(entered_month) == mm)
+		{
+			if (parseInt(entered_day) > dd)
+			{
+				alert("The birthday field is entered incorrectly.");
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+// Valid day function
+function is_valid_day(entered_month,entered_day,entered_year)
+{
+	if ((parseInt(entered_year) % 4) == 0) 
+	{ 
+		var days_in_month = "312931303130313130313031";
+ 	}
+ 	else 
+	{ 
+		var days_in_month = "312831303130313130313031";
+ 	} 
+	var months = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+	if (parseInt(entered_month) != -1)
+	{
+	var dxt=days_in_month.substring(2*parseInt(entered_month),2*parseInt(entered_month)+2);
+
+		if (parseInt(entered_day) > parseInt(dxt)) {
+		alert ("The birthday field is entered wrongly (the day field value exceeds the number of days for the month entered).");
+		return false;
+		}
+	}
+	return true;
+}
+
+function err(val1)
+{
+	alert ("Enter a valid email address.");
+	val1.focus();
+	val1.select();
+}
+</script>
+
+
+
+
+</HEAD>
+
+<BODY topmargin="0" leftmargin="0" background="http://www.sanmacs.com/MCA/mca_images/bg.gif">
+  <table width="1003px" border="0" align="center" bgcolor="#FFFFFF">
+
+  <tr><td valign="top">
+  <table width="100%" border="0" cellpadding="2" cellspacing="2">
+  <tr>
+  <td rowspan="2" width="303" align="left" valign="top"><img src="http://www.sanmacs.com/MCA/mca_images/mca_sanmacslogo.gif" alt="Sanmacs India - Best for MCA Entrance Preparation" title="MCA Entrance Preparation"></img></td>
+     <td colspan="2" align="right" valign="top"><table width="330" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="http://www.sanmacs.com/MCA/mca_images/topl.gif" alt="" /></td>
+<td align="center" style="background:#e7e8e8; width:100%;"> 
+<a class="topLinkbsan" href="http://www.sanmacs.com/MCA/gwu.htm">Franchisee Program</a>&nbsp;| &nbsp;
+<a class="topLinkbsan" href="http://www.sanmacs.com/MCA/sanmacs_mca_entrance_course/sanmacs_regular.htm">Courses</a>&nbsp;|&nbsp;
+<a class="topLinkbsan" href="http://www.sanmacs.com/MCA/mca_contact/Contact.htm">Contact Us</a></td>
+<td><img src="http://www.sanmacs.com/MCA/mca_images/topr.gif" alt=""></td></td>
+</tr>
+
+</table></td>
+     
+  <tr>
+    <td width="544"><img src="http://www.sanmacs.com/MCA/mca_images/leader_mca.gif" alt="Sanmacs India - Best for MCA Entrance Preparation" title="MCA Entrance Preparation"></img></td>
+    <td align="right"><table width="110" border="0">
+  
+  <SCRIPT language=JavaScript src="http://www.sanmacs.com/MCA/images1/facebook.js"></SCRIPT>    
+</table>
+</td>
+  </tr>
+</table>
+
+<table width="995px" border="0">
+<tr><td height="20"></td></tr>
+  <tr>
+  <td align="center"><SCRIPT type=text/javascript src="http://www.sanmacs.com/MCA/mca_images/mca_menu.js"></SCRIPT></td>
+  </tr>
+</table>
+
+<tr><td height="2" valign="top" align="center"></td></tr>
+<table width="1003px" border="0" cellspacing="0" cellpadding="0" align="center">
+
+
+
+
+<tr><td align="center">
+<table width="1003" border="0" bgcolor="#FFFFFF">
+  <tr>
+    <td align="center" valign="top"><table border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+<tr>
+<tr><td height="2px"></td></tr>
+<td><img src="http://www.sanmacs.com/MCA/mca_images/c1.gif" width="5" height="5" border="0" alt=""></td>
+<td style="background: url(http://www.sanmacs.com/MCA/mca_images/c_top.gif)"><img src="http://www.sanmacs.com/MCA/mca_images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+<td><img src="http://www.sanmacs.com/MCA/mca_images/c2.gif" width="5" height="5" border="0" alt=""></td>
+</tr>
+ 
+<tr>
+<td style="background: url(http://www.sanmacs.com/MCA/mca_images/c_left.gif)"><img src="images/spacer.gif" width="1" 
+height="1" border="0" alt=""></td>
+<td> <table width="780" border="0" bgcolor="#FFFFFF">
+  <tr>
+    <td background="http://www.sanmacs.com/MCA/mca_images/strip.bmp" width="780" align="center"><p></span><h2>ALUMNI REGISTRATION</h2></td>
+  </tr>
+ 
+ 
+  <tr>
+   <td><table width="775" border="0" bgcolor="#F8FBFE">
+  <tr>
+    <td><table border=0 cellspacing=0 cellpadding=0 bgcolor="#F8FBFE">
+<tr><td><table border=0 cellspacing=0 cellpadding=0>
+
+
+<tr><td height=4></td></tr>
+<tr><td>
+<script>
+var ct=""+4*Math.random();
+var gd=ct.substring(0,1);
+document.write("<center>"+"<img src=http://www.sanmacs.com/MCA/images2/alumni/students"+gd+".gif></img>"+"</center>");
+//alert("Satish : "+gd);
+</script>
+</td></tr>
+<tr><th height=4></th></tr>
+<tr><td><p id="ft" align="justify"  style=" margin-left:2px; margin-top:4px; letter-spacing:1px; word-spacing:1px; line-height:16px;"><b>Just fill the following application form to revive the never ending association with sanmacs and enjoy the benefits and privileges of being a sanmacsians.</b></p></td></tr>
+<tr><th height=8></th></tr>
+<tr><th height=20 background="http://www.sanmacs.com/MCA/images2/green_strip.gif"><p id="ftpw" style="margin-left:5px" align="justify">LOGIN</p></th></tr>
+<tr><td height=8></td></tr>
+<tr><th>
+<table border=0 cellspacing=0 cellpadding=5 bordercolor=orange width=65%>
+<tr><th width=50%><p id="ft" align="left"  style=" margin-left:2px; margin-top:4px; letter-spacing:1px; word-spacing:1px; line-height:16px;">Email Address*</p></th><td><input type=text name="email" size="24"></td></tr>
+<tr><th><p id="ft" align="left"  style=" margin-left:2px; margin-top:4px; letter-spacing:1px; word-spacing:1px; line-height:16px;">Name*</p></th><td><input type=text name="name" size="24"></td></tr>
+<tr><th><p id="ft" align="left"  style=" margin-left:2px; margin-top:4px; letter-spacing:1px; word-spacing:1px; line-height:16px;">Date of Birth*</p></th><td>
+
+<Select name="birth_day" size="1">
+<option value=" " selected></option>
+<script>
+for(j=1; j<=31; j++) {
+document.write("<option value="+j+">"+j+"</option>");
+}
+</script>
+</select>
+<select name="birth_month" size="1">
+<option value=" " selected> </option>
+<option value="01">Jan</option>
+<option value="02">Feb</option>
+<option value="03">Mar</option>
+<option value="04">Apr</option>
+<option value="05">May</option>
+<option value="06">Jun</option>
+<option value="07">Jul</option>
+<option value="08">Aug</option>
+<option value="09">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+<select name="birth_year" size="1">
+<option value=" " selected> </option>
+<script>
+for(i=1960;i<=1990;i++) {
+document.write("<option value="+i+">"+i+"</option>");
+}
+</script>
+</select>
+<tr><td>
+</table>
+</th></tr>
+<tr><th height=12></th></tr>
+<tr><th><input class=a name="s1" type="button" onClick="check();" value="Next >>"></th></tr>
+
+
+</table>
+
+</td>
+
+
+
+
+
+
+
+
+
+
+<tr><td colspan=2><p id="ftb" align="justify"></p></td></tr>
+
+
+
+</table>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</td>
+
+    
+    
+    
+    
+  </tr>
+</table>
+</td>
+<td style="background: url(http://www.sanmacs.com/MCA/mca_images/c_right.gif)"><img src="http://www.sanmacs.com/MCA/mca_images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+</tr>
+<tr>
+<td><img src="http://www.sanmacs.com/MCA/mca_images/c4.gif" width="5" height="5" border="0" alt=""></td>
+<td style="background: url(http://www.sanmacs.com/MCA/mca_images/c_bot.gif)"><img src="http://www.sanmacs.com/MCA/mca_images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+<td><img src="http://www.sanmacs.com/MCA/mca_images/c3.gif" width="5" height="5" border="0" alt=""></td>
+</tr>
+	</table></td>
+</td>
+    
+    
+    
+    
+    
+    <td valign="top"><table width="80" border="0">
+  <td><table background="http://www.sanmacs.com/MCA/images2/curve.gif" width=177 height=315 cellpadding=0 cellspacing=0>
+<tr><td height=160>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width=160 height=140 id="course" ALIGN="">
+ <PARAM NAME=movie VALUE="http://www.sanmacs.com/MCA/swffiles/course.swf">
+ <PARAM NAME=quality VALUE=high>
+ <PARAM NAME="wmode" VALUE="transparent">
+ <PARAM NAME="SCALE" VALUE="exactfit">
+ <PARAM NAME="menu" VALUE="false">
+ <EMBED src="http://www.sanmacs.com/MCA/swffiles/course.swf" quality=high wmode=transparent width=160 height=140 NAME="course" ALIGN="" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"> 
+ </EMBED>
+</OBJECT></td></tr></table></td>
+  
+</table></td>
+  </tr>
+</table>
+
+</td></td>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><td colspan="3"><table border=0 cellspacing=0 cellpadding=0 background="http://www.sanmacs.com/MCA/mca_images/dmenubg.bmp" width=1003px>
+<tr><td colspan="21" height="20px"></td></tr>
+
+<tr>
+<th><a class="me1" href="http://www.sanmacs.com/index.htm" title="Sanmacs Home">Home</a></th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/mca_entrance_about_us/identity.htm" title="About MCA Entrance">About Us</a> </th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/sanmacs_mca_entrance_course/megaleap.htm" title="Enrollment For MCA Entrance Coaching">Megaleap</a> </th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/mca_entrance_training/mca_entrance_syllabus_of_universities/mca_entrance_syllabus_of_universities.htm" title="Training For MCA Entrance">MCA Training</a> </th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/mca_entrance_notification/mca_entrance_admission_notification.htm" title="Notification For MCA Entrance">Notification</a> </th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/mca_entrance_voyage_of_success/mca_entrance_voyage_of_success.htm" title="Success of MCA Entrance">Voyage of Success</a> </td>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/advertise/Advertisewithus.htm" title="ADvertise with us">Advertise with us</a> </th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/sanmacs_mca_entrance_alumni/register.htm" title="MCA Alumni">Alumni</a> </th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/gwu.htm" title="Franchisee Program">Franchisee Program</a></th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/sanmacs_mca_sitemap/sitemap.htm" title="Site Map">Site Map</a> </th>
+<th valign="top"><a class="me1">|</a></th>
+
+<th><a class="me1" href="http://www.sanmacs.com/MCA/mca_contact/Contact.htm" title="Contact For MCA Training">Contact Us</a> </th></tr>
+
+<tr><td colspan="21" height="10px"></td></tr>
+
+<tr><td colspan="21" height="10px" align="center"><a class="me1" align="center" ><b>(Best viewed in 1024 X 768 Resolution) All rights reserved. Copyright © SANMACS INDIA &nbsp;&nbsp;&nbsp;<a class="me1" href="http://www.sanmacs.com/MCA/mca_entrance_legal_disclaimer/Legal.htm" title="MCA Entrance Disclaimer">Legal Disclaimer</a></b></a></td></tr>
+
+<tr>
+<th colspan=21 height="20px"><th><tr>
+</table>
+
+
+</table>
+  
+    
+  
+  </td></tr>
+</table>
+
+
+
+
+</BODY>
+</HTML>

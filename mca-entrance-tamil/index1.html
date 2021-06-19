@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SANMACS</title>
+<!----------------- START css ------------------------->
+<!--<link rel="icon" href="images/fav-icon.png">-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/font.css" rel="stylesheet" type="text/css" />
+<!--azz-J Validation-->
+<script language="javascript" type="text/javascript">
+            function validateRegister() {
+
+                if (document.getElementById("name").value == "Your Name") {
+                    alert("Enter your Name");
+                    document.getElementById("name").focus();
+                    return false;
+                }
+
+                if (echeck(document.getElementById("email").value) == false) {
+                    document.getElementById("email").value = "";
+                    document.getElementById("email").focus();
+                    return false;
+                }
+
+                if (Validate(document.getElementById("contact").value) == false) {
+                    document.getElementById("contact").value = "";
+                    document.getElementById("contact").focus();
+                    return false;
+                }
+
+                
+            }
+    </script>
+<script language="javascript" type="text/javascript">
+          function echeck(str) {
+              var at = "@"
+              var dot = "."
+              var lat = str.indexOf(at)
+              var lstr = str.length
+              var ldot = str.indexOf(dot)
+
+              if (str.valueOf(str) == "Enter Your Email ID") {
+                  alert("Please enter your valid Email ID")
+                  return false
+              }
+
+              if (str.indexOf(at) == -1) {
+                  alert("Invalid Email ID")
+                  return false
+              }
+              if (str.indexOf(at) == -1 || str.indexOf(at) == 0 || str.indexOf(at) == lstr) {
+                  alert("Invalid E-mail ID")
+                  return false
+              }
+              if (str.indexOf(dot) == -1 || str.indexOf(dot) == 0 || str.indexOf(dot) == lstr) {
+                  alert("Invalid E-mail ID")
+                  return false
+              }
+              if (str.indexOf(at, (lat + 1)) != -1) {
+                  alert("Invalid E-mail ID")
+                  return false
+              }
+              if (str.substring(lat - 1, lat) == dot || str.substring(lat + 1, lat + 2) == dot) {
+                  alert("Invalid E-mail ID")
+                  return false
+              }
+              if (str.indexOf(dot, (lat + 2)) == -1) {
+                  alert("Invalid E-mail ID")
+                  return false
+              }
+              if (str.indexOf(" ") != -1) {
+                  alert("Invalid E-mail ID")
+                  return false
+              }
+              return true
+          } 
+    </script>
+<script language="javascript" type="text/javascript">
+        function Validate(s) {
+
+            if (isNaN(s) || s.indexOf(" ") != -1) {
+                alert("Please only use numeric value for mobile")
+                return false;
+            }
+            if (s.length < 10) {
+                alert("Enter 10 Digit Number");
+                return false;
+            }
+            if (s.length > 10) {
+                alert("Enter 10 Digit Number");
+                return false;
+            }
+        }
+</script>
+<!--azz-J EO Validation Script-->
+</head>
+<body>
+<!----------------- START wrapper ------------------------->
+<div id="wrapper">
+  <div class="toplinks">
+    <div class="call"> <img src="images/icon/call.gif" alt=" " /> +91 9266673166</div>
+  </div>
+  <div id="logo"><a href="#"><img src="images/logo.jpg" alt=" " title="SANMACS" /></a></div>
+  <div class="clear"></div>
+  <span class="hd">Nation’s Premier MCA Entrance Coaching Institute Now Comes To Your<br/>
+  Home Town Sans Geographical Barrier.</span>
+  <!----------------- START baner ------------------------->
+  <div id="banner"><img src="images/banner.jpg" alt=" " />
+      <form name="contact" method="post" action="newsletter4.php" onsubmit="return validateRegister();">
+      <div class="block-form">
+        <h2>Enroll now for our online Coaching classes</h2>
+       <input name="name" id="name"  type="text" value="Name" onblur="if(this.value == '') { this.value='Name'}" onfocus="if (this.value == 'Name') {this.value=''}" />
+         <input title="Email" id="email" name="email" type="text" value="Email" lang="RisEmail" onblur="if(this.value == '') { this.value='Email'}" onfocus="if (this.value == 'Email') {this.value=''}" class="last" />
+        <input name="contact" id="contact" type="text" value="Mobile" lang="R" onblur="if(this.value == '') { this.value='Mobile'}" onfocus="if (this.value == 'Mobile') {this.value=''}" />
+        <input name="city" type="text" value="City" lang="R" onblur="if(this.value == '') { this.value='City'}" onfocus="if (this.value == 'City') {this.value=''}" />  
+        <select name="course">
+          <!--<option>-------------  Courses  ----------------</option>-->
+          <option>Sanmacs Virtual Classes</option>
+          <!--<option>Sanmacs Online Test</option>-->
+        </select>
+        <input name="submit" type="submit" value="Know More" class="button" />
+      </div>
+    </form>
+  </div>
+  <div class="clear"></div>
+  <!----------------- START main content ------------------------->
+  <div id="main-wraper">
+    <div id="main-content">
+      <h3> <strong>Sanmacs</strong> MCA ENTRANCE Coaching Goes Online</h3>
+      <p style="text-align: center;">Get the best online MCA Entrance Coaching from your city without compromising the quality of training imparted at nation's premier MCA Entrance Coaching Institute.</p>
+      <p style="text-align: center;">Sanmacs' online MCA Entrance Coaching features interactive classes in which trainers and students can interact with each other.</p>
+	  <!----------------- START about ------------------------->
+      <div class="clear"></div>
+      <!----------------- START result ------------------------->
+      <div class="title" style="text-align:center;"><img src="images/result.gif" alt=" " style="margin-top:40px;" /></div>
+      <!-----------------  result ------------------------->
+      <div class="block-result">
+        <div class="block-testmonal"><img src="images/testi.gif" alt=" " />
+          <p>I owe my success to SANMACS. The faculty is extremely helpful and approachable. Concepts are taught in a very clear and simple manner. Their pattern of tests and notes are thoroughly exhaustive. Following SANMACS routine is necessary and sufficient to clear any MCA exam. <br/><span>Varshini Rajagopal 1st Rank in TANCET (MCA) 2013</span></p>
+        </div>
+        <!--<div class="block-grn">
+          <div class="block-grn-ttle">IIT-Roorkee MCA Entrance <br/>
+            2013</div>
+          4 Out of First 6 All  India 
+          Ranks are Sanmacsians </div>-->
+        <!----------------- blue ------------------------->
+        <!--<div class="block-grn block-blue">
+          <div class="block-grn-ttle block-blue-ttle">DU MCA Entrance 2013 <br/>
+          </div>
+          9 Out of First 10 All India Ranks are Sanmacsians </div>-->
+        <!----------------- yellow ------------------------->
+        <!--<div class="block-grn block-org">
+          <div class="block-grn-ttle block-org-ttle">DU M.Sc.(Comp. Science) <br/>
+            Entrance 2013</div>
+          5 Out of First 7 All India Ranks are Sanmacsians </div>-->
+        <!----------------- ornage ------------------------->
+        <!--<div class="block-grn block-red">
+          <div class="block-grn-ttle block-red-ttle"> IP University MCA Entrance <br/>
+            2013</div>
+          4 Out of First 6 All India Ranks are Sanmacsians </div>-->
+        <a href="http://www.sanmacs.com/MCA/mca_entrance_voyage_of_success/sanmacs_results_in_mca_entrances/data_representation_of_result/sanmacs_voyage_of_success_in_year_2013.htm" class="anchor">more results..</a> </div>
+      <div id="main-text">
+        <!----------------- START left css ------------------------->
+        <div class="left_side"><img src="images/why-hd.gif" alt=" " />
+          <ul>
+            <li> Most advanced and progressive training aids </li>
+            <li>Consistently delivering excellent results </li>
+            <li>Earned an immaculate forte in MCA Entrance coaching</li>
+            <li>Learn directly from renowned Dr. Sanjay Aggarwal &amp; other expert faculties of Sanmacs. To know more about Dr. Sanjay <a href="http://in.linkedin.com/pub/sanjay-aggarwal/4a/25/565"> click here </a></li>
+          </ul>
+        </div>
+        <!----------------- START right css ------------------------->
+        <div class="rght_side"><img src="images/abt-hd.gif" alt=" " />
+          <p>SANMACS INDIA is a leading scientific academia, which brilliantly grooms the students aspiring for the admission to the coveted MCA degree, in today's cutthroat world of academic competitions.</p>
+          <p style="padding-top:1px;">Born as a brain-child of Dr. Sanjay Aggarwal way back in 1994, it always had eyed for the best and never failed to deliver the best of results, year after years, till date.</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!----------------- START learning css ------------------------->
+      <div class="block-lerng">
+        <div class="title" style="text-align:center;"><img src="images/learning.gif" alt=" " /> </div>
+        <div class="block-crcle"><img src="images/icon/crcle.gif" alt=" " /><br/>
+          <strong>Live Classes</strong>
+          <p>Interactive E-learning classes that will make students feel as if they are sitting at the Sanmacs centre in Delhi</p>
+        </div>
+        <div class="block-crcle"><img src="images/icon/crcle2.gif" alt=" " /><br/>
+          <strong>No Travel Cost</strong>
+          <p>Go easy on your pockets without shedding a penny on travel and imbibe the most from your home’s luxury</p>
+        </div>
+        <div class="block-crcle last"><img src="images/icon/crcle3.gif" alt=" " /><br/>
+          <strong>Class on Demand</strong>
+          <p>Online tutorial enables you to revisit any class again at a suitable time to your day’s schedule for revision</p>
+        </div>
+        <div class="block-crcle"><img src="images/icon/crcle10.gif" alt=" " /><br/>
+          <strong>Two Way Interaction<br/><span style="font-size:15px;">(Audio, Video or Text)</span></strong>
+          <p> 
+
+Interactive online classes  in which trainers and students can interact with each other. </p>
+        </div>
+        <div class="block-crcle"><img src="images/icon/crcle5.gif" alt=" " /><br/>
+          <strong>Material by Experts</strong>
+          <p>Regale on the most coveted study material complied by the core team of  our eminent faculty </p>
+        </div>
+        <div class="block-crcle last"><img src="images/icon/crcle6.gif" alt=" " /><br/>
+          <strong>Online Test</strong>
+          <p>Evaluate  your  self  through  virtual examination and  infer your strengths and weakness to ameliorate your preparation</p>
+        </div>
+        <div class="clear"></div>
+        <div class="block-crcle"><img src="images/icon/crcle7.gif" alt=" " /><br/>
+          <strong>Mock Test</strong>
+          <p>Take on the regularly revised  mock tests  to judge where you stand before you hit the mains with confidence and ease</p>
+        </div>
+        <div class="block-crcle"><img src="images/icon/crcle8.gif" alt=" " /><br/>
+          <strong>Shortcut Tips, Tricks &amp; Tactics</strong>
+          <p>Long, traditional problem- solving  methods are tedious and  passé, time to armor yourself with quicker techniques and  smart tactics. </p>
+        </div>
+        <div class="block-crcle last"><img src="images/icon/crcle9.gif" alt=" " /><br/>
+          <strong>Graphical Analysis</strong>
+          <p>Treat yourself to the graphical representation of your progress, the work done and that needs to be done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!----------------- START footer css ------------------------->
+  <div id="footer">
+    <div class="ftr-lft"><a href="http://www.sanmacs.com/">Home</a> <a href="http://www.sanmacs.com/MCA/mca_entrance_about_us/identity.htm"> About us</a> <a href="http://www.sanmacs.com/MCA/mca_entrance_training/mca_gateway/mca_gateway.htm"> MCA Training</a> <a href="http://www.sanmacs.com/MCA/mca_entrance_voyage_of_success/mca_entrance_voyage_of_success.htm"> Sanmacs Results</a> </div>
+    <span style="margin-left:119px; float:left;">All rights reserved. Copyright SANMACS INDIA </span>
+    <div class="ftr-rght"> Like Us <a href="https://www.facebook.com/sanmacs94"><img src="images/icon/fb.gif" alt=" " /></a> </div>
+  </div>
+</div>
+</body>
+</html>

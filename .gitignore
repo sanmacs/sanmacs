@@ -21,3 +21,19 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+cgi/
+drupal/
+du_toppers/
+dbconnect.java/
+Images1/topper_2010/
+Images1/topper_2011/
+IP_Univ_2013.htm
+jsMath-3.6e
+Letter_images/
+*Thumbs.db*
+MCA/images2/test/
+MCA/images2/testseries/
+MCA/mca_entrance_toppers/
+MCA/mca_entrance_training/
+MCA/mca_entrance_voyage_of_success/

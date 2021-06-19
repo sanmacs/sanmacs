@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'CandaraRegular';
+    src: url('../font/candara.eot');
+    src: url('../font/candara.eot') format('embedded-opentype'),
+         url('../font/candara.woff') format('woff'),
+         url('../font/candara.ttf') format('truetype'),
+         url('../font/candara.svg#CandaraRegular') format('svg');
+}
+
+
+@font-face {
+    font-family: 'CandaraBold';
+    src: url('../fon/tcandarab.eot');
+    src: url('../fon/tcandarab.eot') format('embedded-opentype'),
+         url('../font/candarab.woff') format('woff'),
+         url('../font/candarab.ttf') format('truetype'),
+         url('../font/candarab.svg#CandaraBold') format('svg');
+}
+
+@font-face {
+    font-family: 'DroidSansRegular';
+    src: url('../font/droidsans.eot');
+    src: url('../font/droidsans.eot') format('embedded-opentype'),
+         url('../font/droidsans.woff') format('woff'),
+         url('../font/droidsans.ttf') format('truetype'),
+         url('../font/droidsans.svg#DroidSansRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../font/opensans-regular.eot');
+    src: url('../font/opensans-regular.eot') format('embedded-opentype'),
+         url('../font/opensans-regular.woff') format('woff'),
+         url('../font/opensans-regular.ttf') format('truetype'),
+         url('../font/opensans-regular.svg#OpenSansRegular') format('svg');
+}

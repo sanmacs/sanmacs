@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'LaoUIBold';
+    src: url('../font/laouib.eot');
+    src: url('../font/laouib.eot') format('embedded-opentype'),
+         url('../font/laouib.woff') format('woff'),
+         url('../font/laouib.ttf') format('truetype'),
+         url('../font/laouib.svg#LaoUIBold') format('svg');
+}
+
+@font-face {
+    font-family: 'MyriadProSemibold';
+    src: url('../font/myriadpro-semibold.eot');
+    src: url('../font/myriadpro-semibold.eot') format('embedded-opentype'),
+         url('../font/myriadpro-semibold.woff') format('woff'),
+         url('../font/myriadpro-semibold.ttf') format('truetype'),
+         url('../font/myriadpro-semibold.svg#MyriadProSemibold') format('svg');
+}
+
+@font-face {
+    font-family: 'LaoUIRegular';
+    src: url('../font/laoui.eot');
+    src: url('../font/laoui.eot') format('embedded-opentype'),
+         url('../font/laoui.woff') format('woff'),
+         url('../font/laoui.ttf') format('truetype'),
+         url('../font/laoui.svg#LaoUIRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'KhmerUIRegular';
+    src: url('../font/khmerui.eot');
+    src: url('../font/khmerui.eot') format('embedded-opentype'),
+         url('../font/khmerui.woff') format('woff'),
+         url('../font/khmerui.ttf') format('truetype'),
+         url('../font/khmerui.svg#KhmerUIRegular') format('svg');
+}
+

@@ -1,0 +1,156 @@
+/* Style the button that is used to open and close the collapsible content */
+.collapsible-category {
+  background-color: #1b4685;  /* #054299 */
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible-category:hover {
+  background-color: #129FE1;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+}
+
+.collapsible-category:after {
+  content: "View more";
+  font-size: 16px;
+  color: #fffef4;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "View less";
+  font-size: 16px;
+}
+
+.pm-button {
+  color: #1454B0;
+}
+
+.new-sanmacs-font {
+  font-family: Garamond;
+}
+
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .container {
+      text-align: center;
+  }
+  .container img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+
+/* Question css */
+
+.collapsible-question {
+  background-color: #1454B0; /* blue color - #1454B0  #FFFEF4*/
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible-question:hover {
+  background-color: #129FE1;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+}
+
+.collapsible-question:after {
+  content: "Click here to get the answer";
+  font-size: 16px;
+  color: #fffef4;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "View less";
+  font-size: 16px;
+}
+
+.question {
+  padding-right: 28%;
+  text-align: left;
+  margin: 0px;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 25px;
+  margin: 0px;
+}
+
+.faq-author {
+  text-align: center;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.faq-intro {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 45px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.category-spacer {
+  margin: 10px;
+}
+
+.question-spacer {
+  margin: 5px;
+}
