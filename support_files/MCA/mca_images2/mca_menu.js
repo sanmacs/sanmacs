@@ -5,55 +5,40 @@ function Go(){return}
 ***********************************************************************/
 Menu1=new Array("Home","http://www.sanmacs.com/index.htm","",0,27,55);
 
-Menu2=new Array("Megaleap","http://www.sanmacs.com/MCA/sanmacs_mca_entrance_course/megaleap.htm","",0,27,78);
+Menu2=new Array("Megaleap","../MCA/sanmacs_mca_entrance_course/megaleap.htm","",0,27,78);
 
 Menu3=new Array("About Us","","",5,27,80);
-  Menu3_1=new Array("Identity","http://www.sanmacs.com/MCA/mca_entrance_about_us/identity.htm","",0,27,105);
-  Menu3_2=new Array("Mission","http://www.sanmacs.com/MCA/mca_entrance_about_us/mission.htm","",0,27,124);
-  Menu3_3=new Array("Philosophy","http://www.sanmacs.com/MCA/mca_entrance_about_us/philosophy.htm","",0,27,124);
-  Menu3_4=new Array("Strength","","",3,27,124);
-  
-Menu3_4_1=new Array("Intellectual","http://www.sanmacs.com/MCA/mca_entrance_about_us/strength_for_mca_entrance/faculty.htm","",0,27,114);
-  Menu3_4_2=new Array("Technological","http://www.sanmacs.com/MCA/mca_entrance_about_us/strength_for_mca_entrance/technology.htm","",0,27,114);
-  Menu3_4_3=new Array("Infrastructural","http://www.sanmacs.com/MCA/mca_entrance_about_us/strength_for_mca_entrance/infrastructure.htm","",0,27,114);
-  Menu3_5=new Array("Chairman's Desk","http://www.sanmacs.com/MCA/mca_entrance_about_us/chairman.htm","",0,27,124);
+	Menu3_1=new Array("Identity","../MCA/mca_entrance_about_us/identity.htm","",0,27,105);
+	Menu3_2=new Array("Mission","../MCA/mca_entrance_about_us/mission.htm","",0,27,124);
+	Menu3_3=new Array("Philosophy","../MCA/mca_entrance_about_us/philosophy.htm","",0,27,124);
+	Menu3_4=new Array("Strength","","",2,27,124);
+		Menu3_4_1=new Array("Intellectual","../MCA/mca_entrance_about_us/strength_for_mca_entrance/faculty.htm","",0,27,114);
+		Menu3_4_2=new Array("Technological","../MCA/mca_entrance_about_us/strength_for_mca_entrance/technology.htm","",0,27,114);
+		Menu3_5=new Array("Chairman's Desk","../MCA/mca_entrance_about_us/chairman.htm","",0,27,124);
 
+Menu4=new Array("Student Central","","",2,27,125);
+	Menu4_1=new Array("Student Speaks","../MCA/information_for_mca_entrance_students/sanmacs_student_speaks/Student_speaks.htm","",0,27,174);
+	Menu4_2=new Array("Test Taking Techniques","../MCA/information_for_mca_entrance_students/mca_entrance_test_taking_techniques/mca_entrance_test_taking_techniques.htm","",0,27,174);
 
-Menu4=new Array("Student Central","","",4,27,125);
-  
-Menu4_1=new Array("Online Test","http://www.sanmacs.com/MCA/mca_entrance_sanmacs_previlege/sanlogin.htm","",0,27,174);
-  Menu4_2=new Array("Student Speaks","http://www.sanmacs.com/MCA/information_for_mca_entrance_students/sanmacs_student_speaks/Student_speaks.htm","",0,27,174);
-  Menu4_3=new Array("Expert Panel","http://www.sanmacs.com/SANMACS_Chat/sanmacs_chat.htm","",0,27,174);
-  Menu4_4=new Array("Test Taking Techniques","http://www.sanmacs.com/MCA/information_for_mca_entrance_students/mca_entrance_test_taking_techniques/mca_entrance_test_taking_techniques.htm","",0,27,174);
+Menu5=new Array("Notification","","",2,27,100);
+	Menu5_1=new Array("Results","../MCA/mca_entrance_notification/mca_entrance_result_notification.htm","",0,27,102);
+	Menu5_2=new Array("Scope Of IT","../MCA/mca_entrance_notification/scope_of_it_for_mca_students.htm","",0,27,102);
 
+Menu6=new Array("MCA Training","","",3,27,105);
+	Menu6_1=new Array("Gateway To Global IT","../MCA/mca_entrance_training/mca_gateway/mca_gateway.htm","",0,27,162);
+	Menu6_2=new Array("Syllabus","","",1,27,162);
+		Menu6_2_1=new Array("General MCA Syllabus","../MCA/mca_entrance_training/mca_entrance_syllabus/mca_syllabus.htm","",0,27,162);
+	Menu6_3=new Array("Test Taking Techniques","../MCA/information_for_mca_entrance_students/mca_entrance_test_taking_techniques/mca_entrance_test_taking_techniques.htm","",0,27,162);
 
+Menu7=new Array("Alumni","../MCA/sanmacs_mca_entrance_alumni/register.htm","",0,27,68);
 
-Menu5=new Array("Notification","","",3,27,100);
-  Menu5_1=new Array("Entrance Test","http://www.sanmacs.com/MCA/mca_entrance_notification/mca_entrance_admission_notification.htm","",0,27,102);
-  Menu5_2=new Array("Results","http://www.sanmacs.com/MCA/mca_entrance_notification/mca_entrance_result_notification.htm","",0,27,102);
-  Menu5_3=new Array("Scope Of IT","http://www.sanmacs.com/MCA/mca_entrance_notification/scope_of_it_for_mca_students.htm","",0,27,102);
+Menu8=new Array("Sanmacs Results","../MCA/mca_entrance_voyage_of_success/mca_entrance_voyage_of_success.htm","",0,27,121);
 
-Menu6=new Array("MCA Training","","",5,27,105);
-  Menu6_1=new Array("Gateway To Global IT","http://www.sanmacs.com/MCA/mca_entrance_training/mca_gateway/mca_gateway.htm","",0,27,162);
-  Menu6_2=new Array("Institutes","http://www.sanmacs.com/MCA/mca_entrance_training/mca_institutes/mca_institutes.htm","",0,27,162);
-  Menu6_3=new Array("Entrance Exam Pattern","http://www.sanmacs.com/MCA/mca_entrance_training/mca_entrance_exam_pattern/mca_entrance_exam_pattern.htm","",0,27,162);
-  Menu6_4=new Array("Syllabus","","",2,27,162);
-  Menu6_4_1=new Array("General MCA Syllabus","http://www.sanmacs.com/MCA/mca_entrance_training/mca_entrance_syllabus/mca_syllabus.htm","",0,27,162);
-  Menu6_4_2=new Array("Syllabus Of Universities","http://www.sanmacs.com/MCA/mca_entrance_training/mca_entrance_syllabus_of_universities/mca_entrance_syllabus_of_universities.htm","",0,27,162);
-  Menu6_5=new Array("Test Taking Techniques","http://www.sanmacs.com/MCA/information_for_mca_entrance_students/mca_entrance_test_taking_techniques/mca_entrance_test_taking_techniques.htm","",0,27,162);
+Menu9=new Array("Join Us","../MCA/sanmacs_join_us/sanmacs_join.htm","",0,27,63);
 
-Menu7=new Array("Download Area","","",1,27,130);
-  Menu7_1=new Array("Only For Sanmacsians","http://www.sanmacs.com/MCA/mca_entrance_sanmacs_previlege/sanlogin.htm","",0,27,140);
+Menu10=new Array("FAQs","../MCA/mca_frequently_asked_questions/mca_frequently_asked_questions.htm","",0,27,65);
 
-Menu8=new Array("Alumni","http://www.sanmacs.com/MCA/sanmacs_mca_entrance_alumni/register.htm","",0,27,68);
-
-Menu9=new Array("Sanmacs Results","http://www.sanmacs.com/MCA/mca_entrance_voyage_of_success/mca_entrance_voyage_of_success.htm","",0,27,121);
-
-Menu10=new Array("Join Us","http://www.sanmacs.com/MCA/sanmacs_join_us/sanmacs_join.htm","",0,27,63);
-
-Menu11=new Array("FAQs","http://www.sanmacs.com/MCA/mca_frequently_asked_questions/mca_frequently_asked_questions.htm","",0,27,65);
-
-var NoOffFirstLineMenus=11;	// Number of first level items
+var NoOffFirstLineMenus=10;	// Number of first level items
 var LowBgColor='ffffff';	// Background color when mouse is not over
 var LowSubBgColor='ffffff';	// Background color when mouse is not over on subs
 var HighBgColor='ffffff';	// Background color when mouse is over
