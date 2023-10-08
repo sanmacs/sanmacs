@@ -8,25 +8,26 @@ Menu1=new Array("Home","https://www.sanmacs.com","",0,27,50);
 Menu2=new Array("Megaleap","","",0,27,78);
 
 Menu3=new Array("About Us","","",5,27,80);
-  Menu3_1=new Array("Identity","","",0,27,105);
-  Menu3_2=new Array("Mission","","",0,27,124);
-  Menu3_3=new Array("Philosophy","","",0,27,124);
-  Menu3_4=new Array("Strength","","",3,27,124);
-  Menu3_4_1=new Array("Intellectual","","",0,27,114);
-  	Menu3_4_2=new Array("Technological","","",0,27,114);
-  	Menu3_4_3=new Array("Infrastructural","","",0,27,114);
-  Menu3_5=new Array("Chairman's Desk","","",0,27,124);
+	Menu3_1=new Array("Identity","","",0,27,105);
+	Menu3_2=new Array("Mission","","",0,27,124);
+	Menu3_3=new Array("Philosophy","","",0,27,124);
+	Menu3_4=new Array("Strength","","",3,27,124);
+		Menu3_4_1=new Array("Intellectual","","",0,27,114);
+		Menu3_4_2=new Array("Technological","","",0,27,114);
+		Menu3_4_3=new Array("Infrastructural","","",0,27,114);
+	Menu3_5=new Array("Chairman's Desk","","",0,27,124);
 
 Menu4=new Array("Student Central","","",2,27,125);
-  Menu4_1=new Array("Student Speaks","","",0,27,174);
-  Menu4_2=new Array("Test Taking Techniques","","",0,27,174);
+	Menu4_1=new Array("Student Speaks","","",0,27,174);
+	Menu4_2=new Array("Test Taking Techniques","","",0,27,174);
 
 Menu5=new Array("Notification","","",2,27,100);
-  Menu5_1=new Array("Results","","",0,27,102);
-  Menu5_2=new Array("Scope Of IT","","",0,27,102);
+	Menu5_1=new Array("Results","","",0,27,102);
+	Menu5_2=new Array("Scope Of IT","","",0,27,102);
 
-Menu6=new Array("MCA Training","","",1,27,105);
-  Menu6_1=new Array("Gateway To Global IT","","",0,27,162);
+Menu6=new Array("MCA Training","","",2,27,105);
+	Menu6_1=new Array("Gateway To Global IT","","",0,27,162);
+	Menu6_2=new Array("Syllabus","","",0,27,162);
 
 Menu7=new Array("Download Area","../mca_entrance_material/download_area.htm","",0,27,130);
 
