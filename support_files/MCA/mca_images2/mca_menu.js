@@ -11,11 +11,11 @@ Menu3=new Array("About Us","","",5,27,80);
 	Menu3_1=new Array("Identity","","",0,27,105);
 	Menu3_2=new Array("Mission","","",0,27,124);
 	Menu3_3=new Array("Philosophy","","",0,27,124);
-	Menu3_4=new Array("Strength","","",2,27,124);
+	Menu3_4=new Array("Strength","","",3,27,124);
 		Menu3_4_1=new Array("Intellectual","","",0,27,114);
 		Menu3_4_2=new Array("Technological","","",0,27,114);
-		Menu3_5=new Array("Chairman's Desk","","",0,27,124);
-
+		Menu3_4_3=new Array("Infrastructural","","",0,27,114);
+	Menu3_5=new Array("Chairman's Desk","","",0,27,124);
 
 Menu4=new Array("Student Central","","",2,27,125);
 	Menu4_1=new Array("Student Speaks","","",0,27,174);
@@ -27,7 +27,7 @@ Menu5=new Array("Notification","","",2,27,100);
 
 Menu6=new Array("MCA Training","","",2,27,105);
 	Menu6_1=new Array("Gateway To Global IT","","",0,27,162);
-	Menu6_2=new Array("Syllabus","","",1,27,162);
+	Menu6_2=new Array("Syllabus","","",0,27,162);
 
 Menu7=new Array("Sanmacs Results","./support_files/MCA/mca_entrance_voyage_of_success/sanmacs_results_in_mca_entrances/data_representation_of_result/sanmacs_voyage_of_success_in_year_2019.htm","",0,27,121);
 
