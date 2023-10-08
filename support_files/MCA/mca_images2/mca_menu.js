@@ -5,16 +5,16 @@ function Go(){return}
 ***********************************************************************/
 Menu1=new Array("Home","https://www.sanmacs.com/","",0,27,55);
 
-Menu2=new Array("Megaleap","./support_files/MCA/sanmacs_mca_entrance_course/megaleap.htm","",0,27,78);
+Menu2=new Array("Megaleap","","",0,27,78);
 
 Menu3=new Array("About Us","","",5,27,80);
-	Menu3_1=new Array("Identity","./support_files/MCA/mca_entrance_about_us/identity.htm","",0,27,105);
-	Menu3_2=new Array("Mission","./support_files/MCA/mca_entrance_about_us/mission.htm","",0,27,124);
-	Menu3_3=new Array("Philosophy","./support_files/MCA/mca_entrance_about_us/philosophy.htm","",0,27,124);
+	Menu3_1=new Array("Identity","","",0,27,105);
+	Menu3_2=new Array("Mission","","",0,27,124);
+	Menu3_3=new Array("Philosophy","","",0,27,124);
 	Menu3_4=new Array("Strength","","",2,27,124);
-		Menu3_4_1=new Array("Intellectual","./support_files/MCA/mca_entrance_about_us/strength_for_mca_entrance/faculty.htm","",0,27,114);
-		Menu3_4_2=new Array("Technological","./support_files/MCA/mca_entrance_about_us/strength_for_mca_entrance/technology.htm","",0,27,114);
-		Menu3_5=new Array("Chairman's Desk","./support_files/MCA/mca_entrance_about_us/chairman.htm","",0,27,124);
+		Menu3_4_1=new Array("Intellectual","","",0,27,114);
+		Menu3_4_2=new Array("Technological","","",0,27,114);
+		Menu3_5=new Array("Chairman's Desk","","",0,27,124);
 
 
 Menu4=new Array("Student Central","","",2,27,125);
@@ -25,16 +25,13 @@ Menu5=new Array("Notification","","",2,27,100);
 	Menu5_1=new Array("Results","","",0,27,102);
 	Menu5_2=new Array("Scope Of IT","","",0,27,102);
 
-Menu6=new Array("MCA Training","","",3,27,105);
+Menu6=new Array("MCA Training","","",2,27,105);
 	Menu6_1=new Array("Gateway To Global IT","","",0,27,162);
 	Menu6_2=new Array("Syllabus","","",1,27,162);
-		Menu6_2_1=new Array("General MCA Syllabus","","",0,27,162);
-	Menu6_3=new Array("Test Taking Techniques","","",0,27,162);
 
-Menu7=new Array("Alumni","","",0,27,68);
+Menu7=new Array("Sanmacs Results","./support_files/MCA/mca_entrance_voyage_of_success/sanmacs_results_in_mca_entrances/data_representation_of_result/sanmacs_voyage_of_success_in_year_2019.htm","",0,27,121);
 
-
-Menu8=new Array("Sanmacs Results","./support_files/MCA/mca_entrance_voyage_of_success/mca_entrance_voyage_of_success.htm","",0,27,121);
+Menu8=new Array("Download Area","./support_files/MCA/mca_entrance_material/download_area.htm","",0,27,121);
 
 Menu9=new Array("Join Us","./support_files/MCA/sanmacs_join_us/sanmacs_join.htm","",0,27,63);
 
