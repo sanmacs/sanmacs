@@ -3,41 +3,37 @@ function Go(){return}
 /***********************************************************************
     YOU CAN MANUALLY CHANGE THE MENU HERE, BUT BE VERY CAREFUL !
 ***********************************************************************/
-Menu1=new Array("Home","https://www.sanmacs.com/","",0,27,55);
+Menu1=new Array("Home","https://www.sanmacs.com","",0,27,55);
 
-Menu2=new Array("Megaleap","","",0,27,78);
+Menu2=new Array("Megaleap","https://www.sanmacs.com/support_files/MCA/sanmacs_mca_entrance_course/megaleap.htm","",0,27,80);
 
-Menu3=new Array("About Us","","",5,27,80);
-	Menu3_1=new Array("Identity","","",0,27,105);
-	Menu3_2=new Array("Mission","","",0,27,124);
-	Menu3_3=new Array("Philosophy","","",0,27,124);
-	Menu3_4=new Array("Strength","","",3,27,124);
-		Menu3_4_1=new Array("Intellectual","","",0,27,114);
-		Menu3_4_2=new Array("Technological","","",0,27,114);
+Menu3=new Array("About Us","","",5,27,95);
+	Menu3_1=new Array("Identity","https://www.sanmacs.com/support_files/MCA/mca_entrance_about_us/identity.htm","",0,27,125);
+	Menu3_2=new Array("Mission","https://www.sanmacs.com/support_files/MCA/mca_entrance_about_us/mission.htm","",0,27,125);
+	Menu3_3=new Array("Philosophy","https://www.sanmacs.com/support_files/MCA/mca_entrance_about_us/philosophy.htm","",0,27,125);
+	Menu3_4=new Array("Strength","","",3,27,125);
+		Menu3_4_1=new Array("Intellectual","https://www.sanmacs.com/support_files/MCA/mca_entrance_about_us/strength_for_mca_entrance/faculty.htm","",0,27,114);
+		Menu3_4_2=new Array("Technological","https://www.sanmacs.com/support_files/MCA/mca_entrance_about_us/strength_for_mca_entrance/technology.htm","",0,27,114);
 		Menu3_4_3=new Array("Infrastructural","","",0,27,114);
-	Menu3_5=new Array("Chairman's Desk","","",0,27,124);
+	Menu3_5=new Array("Chairman's Desk","https://www.sanmacs.com/support_files/MCA/mca_entrance_about_us/chairman.htm","",0,27,125);
 
-Menu4=new Array("Student Central","","",2,27,125);
-	Menu4_1=new Array("Student Speaks","","",0,27,174);
-	Menu4_2=new Array("Test Taking Techniques","","",0,27,174);
+Menu4=new Array("Excellence Exhibit","","",2,27,150);
+	Menu4_1=new Array("Student Speaks","https://www.sanmacs.com/support_files/MCA/information_for_mca_entrance_students/sanmacs_student_speaks/Student_speaks.htm","",0,27,150);
+	Menu4_2=new Array("Sanmacs Results","https://www.sanmacs.com/support_files/MCA/mca_entrance_voyage_of_success/sanmacs_results_in_mca_entrances/data_representation_of_result/sanmacs_voyage_of_success_in_year_2019.htm","",0,27,150);
 
-Menu5=new Array("Notification","","",2,27,100);
-	Menu5_1=new Array("Results","","",0,27,102);
-	Menu5_2=new Array("Scope Of IT","","",0,27,102);
+Menu5=new Array("MCA Training","","",2,27,125);
+	Menu5_1=new Array("Gateway To Global IT","http://www.sanmacs.com/MCA/mca_entrance_training/mca_gateway/mca_gateway.htm","",0,27,165);
+	Menu5_2=new Array("Test Taking Techniques","https://www.sanmacs.com/support_files/MCA/information_for_mca_entrance_students/mca_entrance_test_taking_techniques/mca_entrance_test_taking_techniques.htm","",0,27,165);
 
-Menu6=new Array("MCA Training","","",2,27,105);
-	Menu6_1=new Array("Gateway To Global IT","","",0,27,162);
-	Menu6_2=new Array("Syllabus","","",0,27,162);
+Menu6=new Array("Download Area","https://www.sanmacs.com/support_files/MCA/mca_entrance_download_area/download_area.htm","",0,27,120);
 
-Menu7=new Array("Sanmacs Results","./support_files/MCA/mca_entrance_voyage_of_success/sanmacs_results_in_mca_entrances/data_representation_of_result/sanmacs_voyage_of_success_in_year_2019.htm","",0,27,121);
+Menu7=new Array("Learning Lab","https://www.sanmacs.com/support_files/MCA/mca_entrance_learning_lab/learning_lab.htm","",0,27,105);
 
-Menu8=new Array("Download Area","./support_files/MCA/mca_entrance_material/download_area.htm","",0,27,121);
+Menu8=new Array("FAQs","https://www.sanmacs.com/support_files/MCA/mca_frequently_asked_questions/mca_frequently_asked_questions.htm","",0,27,60);
 
-Menu9=new Array("Join Us","./support_files/MCA/sanmacs_join_us/sanmacs_join.htm","",0,27,63);
+Menu9=new Array("Join Our Team","https://www.sanmacs.com/support_files/MCA/sanmacs_join_us/sanmacs_join.htm","",0,27,110);
 
-Menu10=new Array("FAQs","./support_files/MCA/mca_frequently_asked_questions/mca_frequently_asked_questions.htm","",0,27,65);
-
-var NoOffFirstLineMenus=10;	// Number of first level items
+var NoOffFirstLineMenus=9;	// Number of first level items
 var LowBgColor='ffffff';	// Background color when mouse is not over
 var LowSubBgColor='ffffff';	// Background color when mouse is not over on subs
 var HighBgColor='ffffff';	// Background color when mouse is over
@@ -80,7 +76,7 @@ var UnfoldsOnClick=0;		// Level 1 unfolds onclick/ onmouseover
 var WebMasterCheck=0;		// menu tree checking on or off 1 or 0
 var ShowArrow=1;		// Uses arrow gifs when 1
 var KeepHilite=1;		// Keep selected path highligthed
-var Arrws=['http://www.sanmacs.com/MCA/mca_images2/tri.gif',9,10,'http://www.sanmacs.com/MCA/mca_images2/triblank.gif',9,10,'http://www.sanmacs.com/MCA/images1/trileft.gif',9,10];	// Arrow source, width and height
+var Arrws=['../mca_images2/tri.gif',9,10,'../mca_images2/triblank.gif',9,10,'../images1/trileft.gif',9,10];	// Arrow source, width and height
 
 
 /***********************************************************************
