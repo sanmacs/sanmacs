@@ -25,7 +25,7 @@ Menu5=new Array("MCA Training","","",2,27,125);
 	Menu5_1=new Array("Gateway To Global IT","http://www.sanmacs.com/support_files/MCA/mca_entrance_training/mca_gateway/mca_gateway.htm","",0,27,165);
 	Menu5_2=new Array("Test Taking Techniques","https://www.sanmacs.com/support_files/MCA/information_for_mca_entrance_students/mca_entrance_test_taking_techniques/mca_entrance_test_taking_techniques.htm","",0,27,165);
 
-Menu6=new Array("Download Area","https://www.sanmacs.com/support_files/MCA/mca_entrance_download_area/download_area.htm","",0,27,120);
+Menu6=new Array("Download Area","https://www.sanmacs.com/support_files/MCA/mca_entrance_material/download_area.htm","",0,27,120);
 
 Menu7=new Array("Learning Lab","https://www.sanmacs.com/support_files/MCA/mca_learning_lab/learning_lab.htm","",0,27,105);
 
