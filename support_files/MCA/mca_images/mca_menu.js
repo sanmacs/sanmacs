@@ -5,7 +5,7 @@ function Go(){return}
 ***********************************************************************/
 Menu1=new Array("Home","https://www.sanmacs.com","",0,27,55);
 
-Menu2=new Array("Megaleap","https://www.sanmacs.com/support_files/MCA/sanmacs_mca_entrance_course/megaleap.htm","",0,27,80);
+Menu2=new Array("Megaleap","","",0,27,80);
 
 Menu3=new Array("About Us","","",5,27,95);
 	Menu3_1=new Array("Identity","https://www.sanmacs.com/support_files/MCA/mca_entrance_about_us/identity.htm","",0,27,125);
