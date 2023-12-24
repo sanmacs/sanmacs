@@ -4249,7 +4249,7 @@ figcaption {
   left: -271px;
 }
 
-.shape.courses-2 {
+.shape.courses {
   width: 49%;
   border: 1px solid var(--neutral-400);
   border-radius: 100000px;
@@ -10740,7 +10740,7 @@ figcaption {
     left: -159px;
   }
 
-  .shape.courses-2 {
+  .shape.courses {
     top: -104px;
     right: -109px;
   }
