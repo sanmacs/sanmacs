@@ -1,2 +1,2 @@
-# sanmacs.github.io
-Sanmacs India Website
+# sanmacs
+Sanmacs Website
