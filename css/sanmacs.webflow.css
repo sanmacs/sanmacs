@@ -7148,12 +7148,13 @@ figcaption {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: -20px;
+  margin-top: 48px;
   display: flex;
 }
 
 .html-embed-3 {
   width: 100%;
-  height: 700px;
+  height: 2930px;
   border: 1px dashed #000;
 }
 
@@ -15962,7 +15963,7 @@ figcaption {
 
   .html-embed-3 {
     width: 100%;
-    height: 1200px;
+    height: 3380px;
   }
 
   .notification-section {
