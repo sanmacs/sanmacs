@@ -7177,6 +7177,11 @@ figcaption {
   text-decoration: underline;
 }
 
+.bold-text-no-link {
+  color: var(--neutral-100);
+  font-weight: 700;
+}
+
 .notification-section {
   padding-top: 160px;
   padding-bottom: 160px;
