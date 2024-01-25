@@ -16856,3 +16856,32 @@ figcaption {
   font-style: normal;
   font-display: swap;
 }
+
+.question-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.answer-choice {
+  display: block;
+  margin-bottom: 5px;
+  max-width: 300px;
+}
+
+.input-radio-button {
+  margin-right: 5px;
+}
+
+/* Style for the checkmark */
+.checkmark, .cross {
+  position: absolute;
+  margin-left: 10px;
+}
+
+.checkmark {
+  color: green;
+}
+
+.cross {
+  color: red;
+}
