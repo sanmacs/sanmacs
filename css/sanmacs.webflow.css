@@ -16858,11 +16858,13 @@ figcaption {
 }
 
 .question-text {
+  font-family: "Palatino";
   font-size: 18px;
   margin-bottom: 10px;
 }
 
 .answer-choice {
+  font-family: "Palatino";
   display: block;
   margin-bottom: 5px;
   max-width: 300px;
