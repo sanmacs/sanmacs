@@ -17,69 +17,6 @@
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   <link href="images/favicon.jpg" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.jpg" rel="apple-touch-icon">
-
-  <!-- Script to check the selected answer -->
-  <script>
-    function checkAnswer(correctAnswer, groupName) {
-        // Get the selected answer
-        var selectedAnswer = document.querySelector('input[name="' + groupName + '"]:checked');
-
-        // Check if an answer is selected
-        if (selectedAnswer) {
-            var userAnswer = selectedAnswer.value;
-            var selectedChoice = selectedAnswer.parentElement; // Get the label element
-
-            // Call the callback function with all three answers
-            sendAnswer(correctAnswer, userAnswer, selectedChoice);
-
-            // Display the result with the correct answer dynamically
-            var resultText = (userAnswer === correctAnswer) ? "Correct! Well done." : "Incorrect answer.";
-
-            // Display the result
-            document.getElementById('result' + groupName.charAt(groupName.length-1)).innerHTML = resultText;
-
-            // Update the radio button appearance for correct and incorrect answers
-            document.querySelectorAll('.answer-choice').forEach(function (choice) {
-                var checkmark = choice.querySelector('.checkmark');
-                var cross = choice.querySelector('.cross');
-
-                if (choice.textContent.trim() === correctAnswer) {
-                    // Show the green checkmark for the correct choice
-                    console.log(choice.textContent.trim())
-                    checkmark.style.display = 'inline-block';
-                }
-
-                if (userAnswer === correctAnswer && choice === selectedChoice) {
-                    // Show the checkmark for the selected correct choice
-                    checkmark.style.display = 'inline-block';
-                } else if (userAnswer !== correctAnswer && choice === selectedChoice) {
-                    // Show the red cross for the selected incorrect choice
-                    cross.style.display = 'inline-block';
-                }
-            });
-
-            var correctChoice = document.getElementById('correct-choice-q' +  groupName.charAt(groupName.length-1))
-                                        .querySelector('.checkmark');  
-            correctChoice.style.display = 'inline-block';
-
-            // Optional: Disable radio buttons after submission
-            var answerChoices = document.querySelectorAll('input[name="' + groupName + '"]');
-            answerChoices.forEach(function (choice) {
-                choice.disabled = true;
-            });
-        } else {
-          document.getElementById('result' + groupName.charAt(groupName.length-1)).innerText = "Please select an answer before submitting.";
-        }
-    }
-
-    // Callback function to handle the answers
-    function sendAnswer(correctAnswer, userAnswer, selectedChoice) {
-        // You can perform any action with the answers here
-        console.log("Correct Answer:", correctAnswer);
-        console.log("User's Answer:", userAnswer);
-        console.log("Selected Choice:", selectedChoice);
-    }
-  </script>
 </head>
 <body>
   <div class="page-wrapper">
@@ -171,977 +108,591 @@
           <h2 class="text-center"><b><i class="fas fa-folder-open" style="font-size:26px;"></i> NIMCET Previous Year Questions (PYQs)</b></h2>
           <h4 class="text-center" style="color: #ff0000;"><b>NIMCET 2023 Actual Paper (Mathematics Section)</b></h4>
           <div id="qus-pallete">
-
             <div id="questions-container"></div>
 
             <script>
-              // List of questions and answer choices
               var questions = [
-                  {
-                      question: "The value of $\\int_{-\\frac{\\pi}{3}}^{\\frac{\\pi}{3}} \\frac{x \\sin x}{\\cos ^{2} x} d x$ is",
-                      choices: [
-                          "$\\frac{1}{3}(4 \\pi+1)$",
-                          "$\\frac{4 \\pi}{3}-2 \\log \\tan \\frac{5 \\pi}{12}$",
-                          "$\\frac{4 \\pi}{3}+\\log \\frac{5 \\pi}{12}$",
-                          "$\\frac{4 \\pi}{3}-\\log \\tan \\frac{5 \\pi}{12}$"
-                      ],
-                      correctAnswer: 1
-                  },
-                  // Add more questions as needed
+                {
+                  question: "Let $R$ be a reflexive relation on a set having 10 elements. If $m$ is the number of ordered pairs in $R$, then",
+                  choices: [
+                    "$m=10$",
+                    "$m \\leq 10$",
+                    "$m=100$",
+                    "$m \\geq 10$"
+                  ],
+                  correctAnswer: 3
+                },
+                {
+                  question: "A point $P$ in the first quadrant, lies on $y^{2}=4 a x, a>0$ and keeps a distance of $5 a$ units from its focus. Which of the following point lies on the locus of $\mathrm{P}$?",
+                  choices: [
+                    "$(0,1)$",
+                    "$(1,1)$",
+                    "$(2,0)$",
+                    "$(1,0)$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "The value of $\\int_{-\\frac{\\pi}{3}}^{\\frac{\\pi}{3}} \\frac{x \\sin x}{\\cos ^{2} x} d x$ is",
+                  choices: [
+                    "$\\frac{1}{3}(4 \\pi+1)$",
+                    "$\\frac{4 \\pi}{3}-2 \\log \\tan \\frac{5 \\pi}{12}$",
+                    "$\\frac{4 \\pi}{3}+\\log \\frac{5 \\pi}{12}$",
+                    "$\\frac{4 \\pi}{3}-\\log \\tan \\frac{5 \\pi}{12}$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "Let $a, b, c$ and $d$ be non-zero numbers. If the point of intersection of the lines $4 a x+2 a y+c=0$ and $5 b x+2 b y+d=0$ lies in the fourth quadrant and is equidistance from the two axes, then",
+                  choices: [
+                    "$2 a d-3 b c=0$",
+                    "$a d-b c=0$",
+                    "$a d-b c=0$",
+                    "$a+b+c+d=0$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "Which of the following number is the coefficient of $x^{100}$ in the expansion of $\\log _{e}\\left(\\frac{1+x}{1+x^{2}}\\right),|x| < 1$ ?",
+                  choices: [
+                    "$-0.03$",
+                    "$-0.01$",
+                    "$0.01$",
+                    "None of these"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "A line segment $A B$ of length 10 meters is passing through the foot of the perpendicular of a pillar, which is standing at right angle to the ground. Tip of the pillar subtends angles $\\tan ^{-1} 3 \\operatorname{and}^{\\tan ^{-1}} 2$ at $A$ and $B$ respectively, which of the following choice represents the height of the pillar?",
+                  choices: [
+                    "$15$",
+                    "$12$",
+                    "$10$",
+                    "$8$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "The sum of infinite terms of decreasing G.P. is equal to the greatest value of the function $f(x)=x^{3}+3 x-9$ in the interval $[-2,3]$ and the difference between the first two terms is $f^{\\prime}(0)$ then the common ratio of the G.P. is",
+                  choices: [
+                    "$\\frac{2}{3}$",
+                    "$\\frac{4 \\pi}{3}-2 \\log \\tan \\frac{5 \\pi}{12}$",
+                    "$\\frac{4 \\pi}{3}+\\log \\frac{5 \\pi}{12}$",
+                    "$\\frac{4 \\pi}{3}-\\log \\tan \\frac{5 \\pi}{12}$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "If $A$ and $B$ are square matrices such that $B=-A^{-1} B A$, then $(A+B)^{2}=$",
+                  choices: [
+                    "$A^{2}+B^{2}$",
+                    "$A^{2}-B^{2}$",
+                    "$A+B$",
+                    "$A-B$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "In an examination of 9 papers, a candidate has to pass in more papers than the number of papers in which he fails in order to get the success. The number of ways in which he can be fail, is",
+                  choices: [
+                    "$255$",
+                    "$256$",
+                    "$9 \\time 8!$",
+                    "$128$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "If $\\vec{a}$ and $\\vec{b}$ are two unit vectors and $2 \\vec{a}+\\vec{b}$ is 3 units, then which of following statement is true?",
+                  choices: [
+                    "$\\vec{a}$ and $\\vec{b}$ are parallel",
+                    "$\\vec{a}$ and $\\vec{b}$ are perpendicular to each other",
+                    "$\\vec{a}$ is perpendicular to $2 \\vec{a}+\\vec{b}$",
+                    "$\\vec{b}$ is parallel to $2 \\vec{a}+\\vec{b}$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "Box A contains 4 green, 5 black and 6 white balls. Box $B$ contains 5 green, 3 black and 2 white balls. $A$ ball is chosen at random from the box $A$ and placed in box $B$ and then a ball is chosen at random from box B. What is the probability that a black ball was transferred from box A to box B given that the final ball chosen from box B is green?",
+                  choices: [
+                    "$\\frac{25}{79}$",
+                    "$-\\frac{30}{79}$",
+                    "$-\\frac{24}{79}$",
+                    "None of these"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "If $n_{1}$ and $n_{2}$ are the number of real valued solutions of equations $x=\\left|\\sin ^{-1} x\\right|$ and $x=\\sin (x)$ respectively, then the value of $n_{2}-n_{1}$ is",
+                  choices: [
+                    "$1$",
+                    "$0$",
+                    "$2$",
+                    "$3$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "The negation of $\\sim s \\vee(\\sim r \\wedge s)$ is equivalent to",
+                  choices: [
+                    "$s \\vee(r \\vee \\sim s)$",
+                    "$s \\wedge r$",
+                    "$s \\wedge \\sim r$",
+                    "$s \\wedge(r \\wedge \\sim s)$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "If the numbers $a, b, c$ and $d$ are in harmonic progression and arithmetic mean of $a b, b c$ and $c d$ is 9 , then which of the following number is the value of $a d$ ?",
+                  choices: [
+                    "$3$",
+                    "$9$",
+                    "$12$",
+                    "$4$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "If a vector having magnitude of 5 units, makes equal angle with each of the three mutually perpendicular axes, then the sum of the magnitude of the projections on each of the axis is",
+                  choices: [
+                    "$\\frac{15}{3}$ unit",
+                    "$5 \\sqrt{3}$ unit",
+                    "$\\frac{15 \\sqrt{3}}{2}$ unit",
+                    "None of these"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "The range of values of $\\theta$ in the interval $(0, \\pi)$ such that the points $(3,2)$ and $(\\cos \\theta, \\sin \\theta)$ lie on the same side of the line $x+y-1=0$ is",
+                  choices: [
+                    "$\\left(0, \\frac{\\pi}{4}\\right)$",
+                    "$\\left(0, \\frac{3 \\pi}{4}\\right)$",
+                    "$\\left(0, \\frac{\\pi}{2}\\right)$",
+                    "$\\left(0, \\frac{\\pi}{3}\\right)$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "Let $f(x)=\\frac{x^{2}-1}{(|x|-1)}$. Then, the value of $\\lim _{x \\rightarrow-1} f(x)$ is",
+                  choices: [
+                    "$-1$",
+                    "$1$",
+                    "$2$",
+                    "$-2$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "The largest value of $\\cos ^{2} \\theta-6 \\sin \\theta \\cos \\theta+3 \\sin ^{2} \\theta+2$ is",
+                  choices: [
+                    "$4$",
+                    "$0$",
+                    "$4-\\sqrt{10}$",
+                    "$4+\\sqrt{10}$"
+                  ],
+                  correctAnswer: 3
+                },
+                {
+                  question: "If $\\prod_{i=1}^{n} \\tan \\left(a_{i}\\right)=1$ where $a_{i} \\in\\left[0, \\frac{\\pi}{2}\\right]$ for all $i=1,2, \\ldots n$, then the maximum value of $\\prod_{i=1}^{n} \\sin \\left(a_{i}\\right)$ is",
+                  choices: [
+                    "$2^{-n}$",
+                    "$2^{-\\frac{n}{2}}$",
+                    "$1$",
+                    "None of these"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "The foci of the graph represented by $x^{2}-4 y^{2}+2 x+8 y-7=0$ is",
+                  choices: [
+                    "$(-1,-1 \\pm \\sqrt{5})$",
+                    "$(1,-1 \\pm \\sqrt{5})$",
+                    "$(1 \\pm \\sqrt{5}, 1)$",
+                    "$(-1 \\pm \\sqrt{5}, 1)$"
+                  ],
+                  correctAnswer: 3
+                },
+                {
+                  question: "Let $\\vec{a}=2 \\hat{i}+\\hat{j}-2 \\hat{k}$ and $\\vec{b}=\\hat{i}+\\hat{j}$. Let $\\vec{c}$ be a vector such that $|\\vec{c}-\\vec{a}|=3,|(\\vec{a} \\times \\vec{b}) \\times \\vec{c}|=3$ and the angle between $\\vec{c}$ and $\\vec{a} \\times \\vec{b}$ is $30^{\\circ}$, then $\\vec{a} . \\vec{c}$ is equal to",
+                  choices: [
+                    "$2$",
+                    "\\frac{1}{8}$",
+                    "\\frac{25}{8}$",
+                    "$5$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "If $\\int x \\cdot \\sin x \\cdot \\sec ^{3} x d x=\\frac{1}{2}\\left[f(x) \\sec ^{2} x+g(x)\\left(\\frac{\\tan x}{x}\\right)\\right]+c$, where $f$ and $g$ are real valued functions of $x$ and $c$ is an arbitrary constant, then which of the following statement is true?",
+                  choices: [
+                    "$f(x)=g(x)$",
+                    "$f(x) \\cdot g(x)=-1$",
+                    "$f(x)+g(x)=c$",
+                    "$f(x)-g(x)=c$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "Let $f(x)$ be a polynomial of degree 4 and $f(n)=n+1$ for $n=1,2,3,4$. Now, if $f(0)=25$, then $f(5)$ is equal to",
+                  choices: [
+                    "$20$",
+                    "$25$",
+                    "$30$",
+                    "None of these"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "An urn contains 5 yellow, 4 black and 3 white balls. 3 balls are drawn at random. The probability that no black ball is selected is",
+                  choices: [
+                    "$\\frac{14}{55}$",
+                    "$\\frac{1}{66}$",
+                    "$\\frac{2}{9}$",
+                    "None of these"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "If $\\cos ^{-1}\\left(\\frac{3}{\\sqrt{20}}\\right)$ is the angle between the vectors $\\hat{i}-2 x \\hat{j}+3 y \\hat{k}$ and $x \\hat{i}+\\hat{j}+y \\hat{k}$, where $x, y$ are real numbers then which of the following points satisfies the locus of $(x, y)$ ?",
+                  choices: [
+                    "$(0,1)$",
+                    "$(-1,-1)$",
+                    "$(1,0)$",
+                    "$(1,1)$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "A real valued function is defined as $f(x)=\\left\\{\\begin{array}{ll}-1, & -2 \\leq x \\leq 0 \\\\ x-1, & 0 < x \\leq 2\\end{array}\\right.$. Which of the following statement is FALSE?",
+                  choices: [
+                    "$f(|x|)=|x|-1$, if $0 \\leq x \\leq 1$",
+                    "$|f(x)|=x-1$, if $1 \\leq x \\leq 2$",
+                    "$f(|x|)+|f(x)|=1$, if $0 \\leq x \\leq 1$",
+                    "$f(|x|)-|f(x)|=0$, if $1 \\leq x \\leq 2$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "A circle $C$ touches the $x$-axis and touches another circle with center at $(0,3)$ and radius 2 . Then, the locus of the center of the circle $C$ is",
+                  choices: [
+                    "an ellipse",
+                    "a circle",
+                    "a parabola",
+                    "a hyperbola"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "The value $\\sum_{k=1}^{n} x_{k}$, where $x_{k}=\\cos \\left(\\frac{2 \\pi k}{n}\\right)+i \\sin \\left(\\frac{2 \\pi k}{n}\\right)$ is equal to",
+                  choices: [
+                    "$1$",
+                    "$-1$",
+                    "$0$",
+                    "None of these"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "Let $\\vec{a}=\\frac{\\hat{i}-2 \\hat{j}}{\\sqrt{5}}$ and $\\vec{b}=\\frac{2 \\hat{i}+\\hat{j}+3 \\hat{k}}{\\sqrt{14}}$ be two vectors, then the value of $(2 \\hat{a}+\\hat{b})[(\\hat{a} \\times \\hat{b}) \\times(\\hat{a}-2 \\hat{b})]$ is",
+                  choices: [
+                    "$5$",
+                    "$6$",
+                    "$3$",
+                    "$4$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "A speaks truth in $60 \\%$ and $B$ in $50 \\%$ of the cases. The probability that they contradict each other while narrating some incident is",
+                  choices: [
+                    "$\\frac{1}{4}$",
+                    "$\\frac{1}{3}$",
+                    "$\\frac{2}{3}$",
+                    "$\\frac{1}{2}$"
+                  ],
+                  correctAnswer: 3
+                },
+                {
+                  question: "Let $f(x)=\\frac{6^{x}-3^{x}-2^{x}+1}{\\log _{e} 9(1-\\cos x)}$ be a real function. Then, $\\lim _{x \\rightarrow 0} f(x)$ equals",
+                  choices: [
+                    "$2$",
+                    "$3$",
+                    "$\\log _{e} 2$",
+                    "$\\log _{e} 3$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "If $\\lim _{x \\rightarrow 1} \\frac{x^{4}-1}{x-1}=\\lim _{x \\rightarrow k} \\frac{x^{3}-k^{3}}{x^{2}-k^{2}}$, then $k=$",
+                  choices: [
+                    "$1$",
+                    "$\\frac{2}{3}$",
+                    "$\\frac{8}{3}$",
+                    "$\\frac{4}{3}$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "The mean of 5 observations is 5 and their variance is 12.4 . If three of the observation are $1,2,6$ then the mean deviation from the mean of the data is",
+                  choices: [
+                    "$2.8$",
+                    "$2.4$",
+                    "$2.6$",
+                    "$2.5$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "The equation of the tangent at any point of the curve $x=a \\cos 2 t, y=2 \\sqrt{2} a \\sin t$, with $m$ as its slope, is",
+                  choices: [
+                    "$y=m x+a\\left(m-\\frac{1}{m}\\right)$",
+                    "$y=m x-a\\left(m+\\frac{1}{m}\\right)$",
+                    "$y=m x+a\\left(m+\\frac{1}{m}\\right)$",
+                    "$y=a m x+a\\left(m-\\frac{1}{m}\\right)$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "For a group of 100 candidates, the mean and standard deviation of scores were found to be 40 and 15 respectively. Later on it was found that the scores 25 and 35 were misread as 52 and 53, respectively. Then the corrected mean and standard deviation corresponding to the corrected figures are",
+                  choices: [
+                    "$39.5,14$",
+                    "$39.55,14.97$",
+                    "$39.9,14.97$",
+                    "$40.19,15.1$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "Odds in favour of an event $A$ are 2 to 1 and odds in favour of $A \\cup B$ are 3 to 1 . Consider with this information, the bound for $P(B)$ is given by",
+                  choices: [
+                    "$\\frac{1}{3} \\leq P(B) \\leq \\frac{1}{2}$",
+                    "$\\frac{1}{12} \\leq P(B) \\leq \\frac{3}{4}$",
+                    "$0 \\leq P(B) \\leq \\frac{3}{4}$",
+                    "$\\frac{1}{6} \\leq P(B) \\leq \\frac{1}{3}$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "The coefficient of $x^{50}$ in the expansion of $(1+x)^{1000}+2 x(1+x)^{999}+3 x^{2}(1+x)^{998}+\\ldots+1001 x^{1000}$",
+                  choices: [
+                    "${ }^{1002} C_{50}$",
+                    "${ }^{1002} C_{51}$",
+                    "${ }^{1005} C_{50}$",
+                    "${ }^{1005} C_{48}$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "If $\\int f(x) d x=g(x)$, then $\\int x^{5} f\\left(x^{3}\\right) d x$ is equal to",
+                  choices: [
+                    "$\\frac{1}{3} x^{3} g\\left(x^{3}\\right)-\\int x^{3} g\\left(x^{3}\\right) d x+c$",
+                    "$\\frac{1}{3} x^{3} g\\left(x^{3}\\right)-\\int x^{2} g\\left(x^{3}\\right) d x+c$",
+                    "$\\frac{1}{3} x^{3} g\\left(x^{3}\\right)-3 \\int x^{4} g\\left(x^{3}\\right) d x+c$",
+                    "None of these"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "Number of non-differentiable points of the function $f(x)=3+|\\cos x|$ in the interval $[-\\pi, \\pi]$ is",
+                  choices: [
+                    "$1$",
+                    "$3$",
+                    "$4$",
+                    "None of these"
+                  ],
+                  correctAnswer: 3
+                },
+                {
+                  question: "Between any two real roots of the equation $e^{x} \\sin x-1=0$, the equation $e^{x} \\cos x+1=0$ has",
+                  choices: [
+                    "at least one root",
+                    "at most one root",
+                    "no root",
+                    "exactly one root"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "If the maximum value of the function $f(x)=(x-1)^{2}(x+1)^{3}$ is $\\frac{2^{p} 3^{q}}{3125}$ then the value of $(p, q)$ will be",
+                  choices: [
+                    "$(7,3)$",
+                    "$(4,4)$",
+                    "$(5,5)$",
+                    "$(3,7)$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "$\\vec{a}=\\hat{i}-\\hat{k}, \\vec{b}=x \\hat{i}+\\hat{j}+(1-x) \\hat{k}$ and $\\vec{c}=y \\hat{i}+x \\hat{j}+(1+x-y) \\hat{k}$, then $[\\hat{a} \\hat{b} \\hat{c}]$ depends on",
+                  choices: [
+                    "Only $x$",
+                    "Neither $x$ nor $y$",
+                    "Both $x$ nor $y$",
+                    "Only $y$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "A computer producing factory has only two plants $T_{1}$ and $T_{2}$. Plant $T_{1}$ produces $20 \\%$ and plant $T_{2}$ produces $80 \\%$ of the total computers. $7 \\%$ of the computers produced in the factory turn out to be defective. It is known that $P$ (computer turns out to be defective given that it is produced in plant $T_{1}$ ) $=10 P$ (computer turns out to be defective given that it is produced in plant $T_{2}$ ). A computer produced in the factory is randomly selected and it does not turn out to be defective. Then, the probability that is produced in plant $T_{2}$ is",
+                  choices: [
+                    "$\\frac{47}{79}$",
+                    "$\\frac{78}{93}$",
+                    "$\\frac{36}{73}$",
+                    "$\\frac{75}{83}$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "If the equation $\\left|x^{2}-6 x+8\\right|=a$ has four real solutions, then choose the correct option",
+                  choices: [
+                    "$a=1$",
+                    "$a=0$",
+                    "$a \\in(0,1)$",
+                    "$a \\in[1,2]$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "If the total frequency is 685 and the median is 42.6 then the possible values of $F_{1}$ and $F_{2}$ are",
+                  extraDiv: '<table class="table table-bordered" border="1" cellspacing="1" cellpadding="1"><tbody><tr><td>&nbsp;Class interval</td><td>&nbsp;10-20</td><td>&nbsp;20-30</td><td>30-40&nbsp;</td><td>40-50&nbsp;</td><td>&nbsp;50-60</td><td>&nbsp;60-70</td><td>70-80&nbsp;</td></tr><tr><td>&nbsp;Frequency</td><td>&nbsp;180</td><td>$$F_{1}$$</td><td>&nbsp;34</td><td>180&nbsp;</td><td>&nbsp;136</td><td>$$F_{2}$$</td><td>50&nbsp;</td></tr></tbody></table><br>',
+                  choices: [
+                    "$82, 83$",
+                    "$80, 25$",
+                    "$83, 22$",
+                    "$79, 26$"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "If $|x-6|=\\left|x^{2}-4 x\\right|-\\left|x^{2}-5 x+6\\right|$, where $x$ is a real variable, then choose the correct option",
+                  choices: [
+                    "$x \\in(2,5)$",
+                    "$x \\in[2,3] \\cup[6, \\infty)$",
+                    "$x \\in^{\\sim}-[2,6]$",
+                    "None of these"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "In a $\\triangle A B C(a, b, c$ are the lengths of the opposite sides of angles $A, B, C$ respectively), the perimeter of a $\\triangle A B C$ is 6 times the arithmetic mean of the sine values of its angles. if the side $a=1$, then the angle $A$ is",
+                  choices: [
+                    "$\\frac{\\pi}{6}$",
+                    "$\\pi$",
+                    "$\\frac{\\pi}{3}$",
+                    "$\\frac{\\pi}{4}$"
+                  ],
+                  correctAnswer: 0
+                },
+                {
+                  question: "The graph of the real function $f(x)=\\log _{a}\\left(x^{3}+\\sqrt{x^{6}+1}\\right)$ is symmetric about the",
+                  choices: [
+                    "$x$-axis",
+                    "Origin",
+                    "$y$-axis",
+                    "$y=x$ line"
+                  ],
+                  correctAnswer: 1
+                },
+                {
+                  question: "Let $A$ and $B$ be two sets such that $A \\cap X=B \\cap X=\\phi$ and $A \\cup X=B \\cup X$ for some set $X$. Then",
+                  choices: [
+                    "$A \\cup B=X$",
+                    "$B=X$",
+                    "$A=B$",
+                    "$A=X$"
+                  ],
+                  correctAnswer: 2
+                },
+                {
+                  question: "The locus of mid-points of all chords of the parabola $y^{2}=4 x$ which are drawn through its vertex, is",
+                  choices: [
+                    "$y^{2}=8 x$",
+                    "$y^{2}=2 x$",
+                    "$x^{2}+4 y^{2}=16$",
+                    "$x^{2}=2 y$"
+                  ],
+                  correctAnswer: 1
+                }
               ];
-      
+
               // Function to create a question div dynamically
               function createQuestionDiv(questionObj, index) {
-                  var div = document.createElement("div");
-                  div.id = "question" + index;
-                  div.innerHTML = `
-                      <hr>
-                      <label style="font-size:16px;">Question.${index + 1}</label>
-                      <label class="pull-right" style="margin-left:15px;"></label>
-                      <span style="display:none;">1</span>
-                      <hr>
-                      <div class="question-text">
-                          ${questionObj.question}
-                          <br><br>
-                          ${questionObj.choices.map((choice, i) => `<label class="answer-choice" id="${index}-${i}"><input type="radio" name="answer${index + 1}" value="${i}">${choice}</label>`).join("")}
-                      </div>
-                      <br>
-                      <button onclick="checkAnswer(${questionObj.correctAnswer}, 'answer${index + 1}', ${index})">Submit Answer</button>
-                      <p id="result${index + 1}"></p>
-                  `;
-                  document.getElementById("questions-container").appendChild(div);
+                var div = document.createElement("div");
+
+                div.id = "question" + index;
+                div.innerHTML = `<hr><label style="font-size:16px;">Question.${index + 1}</label>
+                                 <label class="pull-right" style="margin-left:15px;"></label>
+                                 <span style="display:none;">1</span><hr>`;
+                
+                var questionDiv = document.createElement("div");
+                questionDiv.className = "question-text";
+                questionDiv.innerHTML = `${questionObj.question}<br>`;
+                div.appendChild(questionDiv);
+
+                // Add extra div if provided
+                if (questionObj.extraDiv) {
+                  var extraDiv = document.createElement("div");
+                  extraDiv.innerHTML = questionObj.extraDiv;
+                  div.appendChild(extraDiv);
+                }
+
+                var answerChoicesDiv = document.createElement("div");
+                answerChoicesDiv.innerHTML = `${questionObj.choices.map((choice, i) => `<label class="answer-choice" id="${index}-${i}"><input class=input-radio-button type="radio" name="answer${index + 1}" value="${i}">${choice}</label>`).join("")}`;
+                div.appendChild(answerChoicesDiv);
+
+                // Submit Button Div
+                var submitDiv = document.createElement("div");
+                submitDiv.innerHTML = `<br><button onclick="checkAnswer(${questionObj.correctAnswer}, 'answer${index + 1}', ${index})">Submit Answer</button><p id="result${index + 1}"></p>`;
+                div.appendChild(submitDiv);
+
+            document.body.appendChild(div);
+
+                document.getElementById("questions-container").appendChild(div);
               }
-      
+          
               // Create question divs for each question in the list
               questions.forEach((question, index) => createQuestionDiv(question, index));
-      
+          
               // Function to check the selected answer with checkmarks and red crosses
               function checkAnswer(correctAnswer, groupName, questionIndex) {
-                  var selectedAnswer = document.querySelector(`input[name="${groupName}"]:checked`);
-                  if (selectedAnswer) {
-                      var userAnswer = parseInt(selectedAnswer.value, 10);
-                      var resultElement = document.getElementById(`result${groupName.charAt(groupName.length - 1)}`);
-                      var selectedChoice = document.getElementById(`${questionIndex}-${userAnswer}`);
-                      var correctChoice = document.getElementById(`${questionIndex}-${correctAnswer}`)
-                      resultElement.innerText = userAnswer === correctAnswer ? "Correct! Well done." : `Incorrect.`;
-                      resultElement.style.color = userAnswer === correctAnswer ? "green" : "red";
-      
-                      // Add checkmark and red cross
-                      var checkmark = document.createElement("span");
-                      checkmark.className = "checkmark";
-                      checkmark.innerText = "✔";
-      
-                      var cross = document.createElement("span");
-                      cross.className = "cross";
-                      cross.innerText = "❌";
-      
-                      if (userAnswer === correctAnswer) {
-                          // Show the checkmark for the correct choice
-                          selectedChoice.appendChild(checkmark);
-                      } else {
-                          // Show the red cross for the selected incorrect choice
-                          selectedChoice.appendChild(cross);
-                          correctChoice.appendChild(checkmark);
-                      }
-
-                      // Optional: Disable radio buttons after submission
-                      var answerChoices = document.querySelectorAll(`input[name="${groupName}"]`);
-                      answerChoices.forEach(function (choice) {
-                          choice.disabled = true;
-                      });
+                var selectedAnswer = document.querySelector(`input[name="${groupName}"]:checked`);
+                if (selectedAnswer) {
+                  var userAnswer = parseInt(selectedAnswer.value, 10);
+                  var resultElement = document.getElementById(`result${groupName.charAt(6)}`);
+                  var selectedChoice = document.getElementById(`${questionIndex}-${userAnswer}`);
+                  var correctChoice = document.getElementById(`${questionIndex}-${correctAnswer}`)
+                  
+                  resultElement.innerText = userAnswer === correctAnswer ? "Correct! Well done." : `Incorrect.`;
+                  resultElement.style.color = userAnswer === correctAnswer ? "green" : "red";
+          
+                  // Add checkmark and red cross
+                  var checkmark = document.createElement("span");
+                  checkmark.className = "checkmark";
+                  checkmark.innerText = "✔";
+          
+                  var cross = document.createElement("span");
+                  cross.className = "cross";
+                  cross.innerText = "❌";
+          
+                  if (userAnswer === correctAnswer) {
+                    // Show the checkmark for the correct choice
+                    selectedChoice.appendChild(checkmark);
                   } else {
-                      alert("Please select an answer before submitting.");
+                    // Show the red cross for the selected incorrect choice
+                    selectedChoice.appendChild(cross);
+                    correctChoice.appendChild(checkmark);
                   }
+          
+                  // Optional: Disable radio buttons after submission
+                  var answerChoices = document.querySelectorAll(`input[name="${groupName}"]`);
+                  answerChoices.forEach(function (choice) {
+                  choice.disabled = true;
+                  });
+                } else {
+                  alert("Please select an answer before submitting.");
+                }
               }
-          </script>
-
-            <div id="question1">
-              <hr>
-              <label style="font-size:16px;">Question.1</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Let $R$ be a reflexive relation on a set having 10 elements. If $m$ is the number of ordered pairs in $R$, then
-                  <!--<script type="math/tex" id="MathJax-Element-1">\vec{a}=\hat{i}-\hat{k}</script>, 
-                  <script type="math/tex" id="MathJax-Element-2">\vec{b}=x\hat{i}+\hat{j}+(1-x)\hat{k}</script> and 
-                  <script type="math/tex" id="MathJax-Element-3">\vec{c}=y\hat{i}+x\hat{j}+(1+x-y)\hat{k}</script>, then
-                  <script type="math/tex" id="MathJax-Element-4">\begin{bmatrix}{\vec{a}} & {\vec{b}} & {\vec{c}}\end{bmatrix}</script>-->
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer1" value="a"> $m=10$<span class="cross">❌</span></label>
-                <label class="answer-choice"><input type="radio" name="answer1" value="b"> $m \leq 10$<span class="cross">❌</span></label>
-                <label class="answer-choice"><input type="radio" name="answer1" value="c"> $m=100$<span class="cross">❌</span></label>
-                <label class="answer-choice" id="correct-choice-q1"><input type="radio" name="answer1" value="d"> $m \geq 10$<span class="checkmark">✔</span></label>
-                <br>
-                <button onclick="checkAnswer('d', 'answer1')">Submit Answer</button>
-                <p id="result1"></p>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-            
-            <div id="question2">
-              <hr>
-              <label style="font-size:16px;">Question.2</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                A point $P$ in the first quadrant, lies on $y^{2}=4 a x, a>0$ and keeps a distance of $5 a$ units from its focus. Which of the following point lies on the locus of $\mathrm{P}$?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer2" value="a"> $(0,1)$<span class="cross">❌</span></label>
-                <label class="answer-choice" id="correct-choice-q2"><input type="radio" name="answer2" value="b"> $(1,1)$<span class="checkmark">✔</span></label>
-                <label class="answer-choice"><input type="radio" name="answer2" value="c"> $(2,0)$<span class="cross">❌</span></label>
-                <label class="answer-choice"><input type="radio" name="answer2" value="d"> $(1,0)$<span class="cross">❌</span></label>
-              </div>
-              <br>
-              <button onclick="checkAnswer('b', 'answer2')">Submit Answer</button>
-              <p id="result2"></p>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question3">
-              <hr>
-              <label style="font-size:16px;">Question.3</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The value of $\int_{-\frac{\pi}{3}}^{\frac{\pi}{3}} \frac{x \sin x}{\cos ^{2} x} d x$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer3" value="a"> $\frac{1}{3}(4 \pi+1)$</label>
-                <label class="answer-choice" id="correct-choice-q3"><input type="radio" name="answer3" value="b"> $\frac{4 \pi}{3}-2 \log \tan \frac{5 \pi}{12}$</label>
-                <label class="answer-choice"><input type="radio" name="answer3" value="c"> $\frac{4 \pi}{3}+\log \frac{5 \pi}{12}$</label>
-                <label class="answer-choice"><input type="radio" name="answer3" value="d"> $\frac{4 \pi}{3}-\log \tan \frac{5 \pi}{12}$</label>
-              </div>
-              <br>
-              <button onclick="checkAnswer('b', 'answer2')">Submit Answer</button>
-              <p id="result3"></p>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.4</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Let $a, b, c$ and $d$ be non-zero numbers. If the point of intersection of the lines $4 a x+2 a y+c=0$ and $5 b x+2 b y+d=0$ lies in the fourth quadrant and is equidistance from the two axes, then
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $2 a d-3 b c=0$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $a d-b c=0$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $a d-b c=0$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $a+b+c+d=0$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.5</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Which of the following number is the coefficient of $x^{100}$ in the expansion of $\log _{e}\left(\frac{1+x}{1+x^{2}}\right),|x| < 1$ ?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $-0.03$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $-0.01$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $0.01$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.6</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                A line segment $A B$ of length 10 meters is passing through the foot of the perpendicular of a pillar, which is standing at right angle to the ground. Tip of the pillar subtends angles $\tan ^{-1} 3 \operatorname{and}^{\tan ^{-1}} 2$ at $A$ and $B$ respectively, which of the following choice represents the height of the pillar?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $15$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $12$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $10$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $8$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.7</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The sum of infinite terms of decreasing G.P. is equal to the greatest value of the function $f(x)=x^{3}+3 x-9$ in the interval $[-2,3]$ and the difference between the first two terms is $f^{\prime}(0)$ then the common ratio of the G.P. is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{2}{3}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $-\frac{2}{3}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $-\frac{4}{3}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{4}{3}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.8</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $A$ and $B$ are square matrices such that $B=-A^{-1} B A$, then $(A+B)^{2}=$
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $A^{2}+B^{2}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $A^{2}-B^{2}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $A+B$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $A-B$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.9</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                In an examination of 9 papers, a candidate has to pass in more papers than the number of papers in which he fails in order to get the success. The number of ways in which he can be fail, is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $255$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $256$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $9 \times 8!$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $128$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.10</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $\vec{a}$ and $\vec{b}$ are two unit vectors and $2 \vec{a}+\vec{b}$ is 3 units, then which of following statement is true?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\vec{a}$ and $\vec{b}$ are parallel</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\vec{a}$ and $\vec{b}$ are perpendicular to each other</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\vec{a}$ is perpendicular to $2 \vec{a}+\vec{b}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\vec{b}$ is parallel to $2 \vec{a}+\vec{b}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.11</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Box A contains 4 green, 5 black and 6 white balls. Box $B$ contains 5 green, 3 black and 2 white balls. $A$ ball is chosen at random from the box $A$ and placed in box $B$ and then a ball is chosen at random from box B. What is the probability that a black ball was transferred from box A to box B given that the final ball chosen from box B is green?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{25}{79}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $-\frac{30}{79}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $-\frac{24}{79}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.12</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $n_{1}$ and $n_{2}$ are the number of real valued solutions of equations $x=\left|\sin ^{-1} x\right|$ and $x=\sin (x)$ respectively, then the value of $n_{2}-n_{1}$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $0$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $2$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $3$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.13</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The negation of $\sim s \vee(\sim r \wedge s)$ is equivalent to
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $s \vee(r \vee \sim s)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $s \wedge r$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $s \wedge \sim r$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $s \wedge(r \wedge \sim s)$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.14</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If the numbers $a, b, c$ and $d$ are in harmonic progression and arithmetic mean of $a b, b c$ and $c d$ is 9 , then which of the following number is the value of $a d$ ?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $3$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $9$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $12$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $4$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.15</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If a vector having magnitude of 5 units, makes equal angle with each of the three mutually perpendicular axes, then the sum of the magnitude of the projections on each of the axis is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{15}{3}$ unit</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $5 \sqrt{3}$ unit</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{15 \sqrt{3}}{2}$ unit</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.16</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The range of values of $\theta$ in the interval $(0, \pi)$ such that the points $(3,2)$ and $(\cos \theta, \sin \theta)$ lie on the same side of the line $x+y-1=0$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\left(0, \frac{\pi}{4}\right)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\left(0, \frac{3 \pi}{4}\right)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\left(0, \frac{\pi}{2}\right)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\left(0, \frac{\pi}{3}\right)$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-            
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.17</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Let $f(x)=\frac{x^{2}-1}{(|x|-1)}$. Then, the value of $\lim _{x \rightarrow-1} f(x)$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $-1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $2$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $-2$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.18</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The largest value of $\cos ^{2} \theta-6 \sin \theta \cos \theta+3 \sin ^{2} \theta+2$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $4$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $0$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $4-\sqrt{10}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $4+\sqrt{10}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.19</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $\prod_{i=1}^{n} \tan \left(a_{i}\right)=1$ where $a_{i} \in\left[0, \frac{\pi}{2}\right]$ for all $i=1,2, \ldots n$, then the maximum value of $\prod_{i=1}^{n} \sin \left(a_{i}\right)$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $2^{-n}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $2^{-\frac{n}{2}}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.20</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The foci of the graph represented by $x^{2}-4 y^{2}+2 x+8 y-7=0$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $(-1,-1 \pm \sqrt{5})$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(1,-1 \pm \sqrt{5})$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(1 \pm \sqrt{5}, 1)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(-1 \pm \sqrt{5}, 1)$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.21</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Let $\vec{a}=2 \hat{i}+\hat{j}-2 \hat{k}$ and $\vec{b}=\hat{i}+\hat{j}$. Let $\vec{c}$ be a vector such that $|\vec{c}-\vec{a}|=3,|(\vec{a} \times \vec{b}) \times \vec{c}|=3$ and the angle between $\vec{c}$ and $\vec{a} \times \vec{b}$ is $30^{\circ}$, then $\vec{a} . \vec{c}$ is equal to
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $2$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{8}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{25}{8}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $5$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.22</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $\int x \cdot \sin x \cdot \sec ^{3} x d x=\frac{1}{2}\left[f(x) \sec ^{2} x+g(x)\left(\frac{\tan x}{x}\right)\right]+c$, where $f$ and $g$ are real valued functions of $x$ and $c$ is an arbitrary constant, then which of the following statement is true?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $f(x)=g(x)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $f(x) \cdot g(x)=-1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $f(x)+g(x)=0$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $f(x)-g(x)=c$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.23</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Let $f(x)$ be a polynomial of degree 4 and $f(n)=n+1$ for $n=1,2,3,4$. Now, if $f(0)=25$, then $f(5)$ is equal to
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $20$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $25$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $30$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.24</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                An urn contains 5 yellow, 4 black and 3 white balls. 3 balls are drawn at random. The probability that no black ball is selected is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{14}{55}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{66}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{2}{9}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.25</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $\cos ^{-1}\left(\frac{3}{\sqrt{20}}\right)$ is the angle between the vectors $\hat{i}-2 x \hat{j}+3 y \hat{k}$ and $x \hat{i}+\hat{j}+y \hat{k}$, where $x, y$ are real numbers then which of the following points satisfies the locus of $(x, y)$ ?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $(0,1)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(-1,-1)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(1,0)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(1,1)$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.26</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                A real valued function is defined as $f(x)=\left\{\begin{array}{ll}-1, & -2 \leq x \leq 0 \\ x-1, & 0 < x \leq 2\end{array}\right.$. Which of the following statement is FALSE?
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $f(|x|)=|x|-1$, if $0 \leq x \leq 1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $|f(x)|=x-1$, if $1 \leq x \leq 2$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $f(|x|)+|f(x)|=1$, if $0 \leq x \leq 1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $f(|x|)-|f(x)|=0$, if $1 \leq x \leq 2$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.27</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                A circle $C$ touches the $x$-axis and touches another circle with center at $(0,3)$ and radius 2 . Then, the locus of the center of the circle $C$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> an ellipse</label>
-                <label class="answer-choice"><input type="radio" name="answer"> a circle</label>
-                <label class="answer-choice"><input type="radio" name="answer"> a parabola</label>
-                <label class="answer-choice"><input type="radio" name="answer"> a hyperbola</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.28</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The value $\sum_{k=1}^{n} x_{k}$, where $x_{k}=\cos \left(\frac{2 \pi k}{n}\right)+i \sin \left(\frac{2 \pi k}{n}\right)$ is equal to
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $-1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $0$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.29</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Let $\vec{a}=\frac{\hat{i}-2 \hat{j}}{\sqrt{5}}$ and $\vec{b}=\frac{2 \hat{i}+\hat{j}+3 \hat{k}}{\sqrt{14}}$ be two vectors, then the value of $(2 \hat{a}+\hat{b})[(\hat{a} \times \hat{b}) \times(\hat{a}-2 \hat{b})]$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $5$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $6$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $3$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $4$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.30</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                A speaks truth in $60 \%$ and $B$ in $50 \%$ of the cases. The probability that they contradict each other while narrating some incident is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{4}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{3}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{2}{3}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{2}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.31</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Let $f(x)=\frac{6^{x}-3^{x}-2^{x}+1}{\log _{e} 9(1-\cos x)}$ be a real function. Then, $\lim _{x \rightarrow 0} f(x)$ equals
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $2$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $3$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\log _{e} 2$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\log _{e} 3$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.32</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $\lim _{x \rightarrow 1} \frac{x^{4}-1}{x-1}=\lim _{x \rightarrow k} \frac{x^{3}-k^{3}}{x^{2}-k^{2}}$, then $k=$
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{2}{3}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{8}{3}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{4}{3}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.33</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The mean of 5 observations is 5 and their variance is 124 . If three of the observation are $1,2,6$ then the mean deviation from the mean of the data is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $2.8$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $2.4$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $2.6$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $2.5$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.34</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The equation of the tangent at any point of the curve $x=a \cos 2 t, y=2 \sqrt{2} a \sin t$, with $m$ as its slope, is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $y=m x+a\left(m-\frac{1}{m}\right)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $y=m x-a\left(m+\frac{1}{m}\right)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $y=m x+a\left(m+\frac{1}{m}\right)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $y=a m x+a\left(m-\frac{1}{m}\right)$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.35</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                For a group of 100 candidates, the mean and standard deviation of scores were found to be 40 and 15 respectively. Later on it was found that the scores 25 and 35 were misread as 52 and 53, respectively. Then the corrected mean and standard deviation corresponding to the corrected figures are
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $39.5,14$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $39.55,14.97$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $39.9,14.97$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $40.19,15.1$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.36</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Odds in favour of an event $A$ are 2 to 1 and odds in favour of $A \cup B$ are 3 to 1 . Consider with this information, the bound for $P(B)$ is given by
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{3} \leq P(B) \leq \frac{1}{2}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{12} \leq P(B) \leq \frac{3}{4}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $0 \leq P(B) \leq \frac{3}{4}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{6} \leq P(B) \leq \frac{1}{3}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.37</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The coefficient of $x^{50}$ in the expansion of $(1+x)^{1000}+2 x(1+x)^{999}+3 x^{2}(1+x)^{998}+\ldots+1001 x^{1000}$
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> ${ }^{1002} C_{50}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> ${ }^{1002} C_{51}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> ${ }^{1005} C_{50}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> ${ }^{1005} C_{48}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.38</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $\int f(x) d x=g(x)$, then $\int x^{5} f\left(x^{3}\right) d x$ is equal to
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{3} x^{3} g\left(x^{3}\right)-\int x^{3} g\left(x^{3}\right) d x+c$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{3} x^{3} g\left(x^{3}\right)-\int x^{2} g\left(x^{3}\right) d x+c$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{1}{3} x^{3} g\left(x^{3}\right)-3 \int x^{4} g\left(x^{3}\right) d x+c$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.39</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Number of non-differentiable points of the function $f(x)=3+|\cos x|$ in the interval $[-\pi, \pi]$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $3$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $4$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.40</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Between any two real roots of the equation $e^{x} \sin x-1=0$, the equation $e^{x} \cos x+1=0$ has
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> at least one root</label>
-                <label class="answer-choice"><input type="radio" name="answer"> at most one root</label>
-                <label class="answer-choice"><input type="radio" name="answer"> no root</label>
-                <label class="answer-choice"><input type="radio" name="answer"> exactly one root</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.41</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If the maximum value of the function $f(x)=(x-1)^{2}(x+1)^{3}$ is $\frac{2^{p} 3^{q}}{3125}$ then the value of $(p, q)$ will be
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $(7,3)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(4,4)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(5,5)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $(3,7)$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.42</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                $\vec{a}=\hat{i}-\hat{k}, \vec{b}=x \hat{i}+\hat{j}+(1-x) \hat{k}$ and $\vec{c}=y \hat{i}+x \hat{j}+(1+x-y) \hat{k}$, then $[\hat{a} \hat{b} \hat{c}]$ depends on
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> Only $x$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> Neither $x$ nor $y$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> Both $x$ nor $y$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> Only $y$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.43</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                A computer producing factory has only two plants $T_{1}$ and $T_{2}$. Plant $T_{1}$ produces $20 \%$ and plant $T_{2}$ produces $80 \%$ of the total computers. $7 \%$ of the computers produced in the factory turn out to be defective. It is known that $P$ (computer turns out to be defective given that it is produced in plant $T_{1}$ ) $=10 P$ (computer turns out to be defective given that it is produced in plant $T_{2}$ ). 
-                A computer produced in the factory is randomly selected and it does not turn out to be defective. Then, the probability that is produced in plant $T_{2}$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{47}{79}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{78}{93}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{36}{73}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{75}{83}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.44</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If the equation $\left|x^{2}-6 x+8\right|=a$ has four real solutions, then choose the correct option
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $a=1$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $a=0$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $a \in(0,1)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $a \in[1,2]$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.45</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                <table class="table table-bordered" border="1" cellspacing="1" cellpadding="1">
-                  <tbody>
-                      <tr>
-                          <td>&nbsp;Class interval</td>
-                          <td>&nbsp;10-20</td>
-                          <td>&nbsp;20-30</td>
-                          <td>30-40&nbsp;</td>
-                          <td>40-50&nbsp;</td>
-                          <td>&nbsp;50-60</td>
-                          <td>&nbsp;60-70</td>
-                          <td>70-80&nbsp;</td>
-                      </tr>
-                      <tr>
-                          <td>&nbsp;Frequency</td>
-                          <td>&nbsp;180</td>
-                          <td>$$F_{1}$$</td>
-                          <td>&nbsp;34</td>
-                          <td>180&nbsp;</td>
-                          <td>&nbsp;136</td>
-                          <td>$$F_{2}$$</td>
-                          <td>50&nbsp;</td>
-                      </tr>
-                  </tbody>
-                </table>
-                If the total frequency is 685 and the median is 42.6 then the possible values of $F_{1}$ and $F_{2}$ are
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $82, 83$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $80, 25$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $83, 22$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $79, 26$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.46</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                If $|x-6|=\left|x^{2}-4 x\right|-\left|x^{2}-5 x+6\right|$, where $x$ is a real variable, then choose the correct option
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $x \in(2,5)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $x \in[2,3] \cup[6, \infty)$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $x \in^{\sim}-[2,6]$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> None of these</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.47</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                In a $\triangle A B C(a, b, c$ are the lengths of the opposite sides of angles $A, B, C$ respectively), the perimeter of a $\triangle A B C$ is 6 times the arithmetic mean of the sine values of its angles. if the side $a=1$, then the angle $A$ is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{\pi}{6}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\pi$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{\pi}{3}$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $\frac{\pi}{4}$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.48</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The graph of the real function $f(x)=\log _{a}\left(x^{3}+\sqrt{x^{6}+1}\right)$ is symmetric about the
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $x$-axis</label>
-                <label class="answer-choice"><input type="radio" name="answer"> Origin</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $y$-axis</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $y=x$ line</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.49</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                Let $A$ and $B$ be two sets such that $A \cap X=B \cap X=\phi$ and $A \cup X=B \cup X$ for some set $X$. Then
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $A \cup B=X$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $B=X$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $A=B$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $A=X$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
-
-            <div id="question">
-              <hr>
-              <label style="font-size:16px;">Question.50</label>
-              <label class="pull-right" style="margin-left:15px;"></label>
-              <span id="rans-11520" style="display:none;">1</span>
-              <hr>
-              <div class="question-text">
-                The locus of mid-points of all chords of the parabola $y^{2}=4 x$ which are drawn through its vertex, is
-                <br><br>
-                <label class="answer-choice"><input type="radio" name="answer"> $y^{2}=8 x$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $y^{2}=2 x$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $x^{2}+4 y^{2}=16$</label>
-                <label class="answer-choice"><input type="radio" name="answer"> $x^{2}=2 y$</label>
-              </div>
-              <!-- <div> Solution code </div> -->
-            </div>
+            </script>
           </div>
         </div>
       </div>

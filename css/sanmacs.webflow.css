@@ -16865,7 +16865,11 @@ figcaption {
 .answer-choice {
   display: block;
   margin-bottom: 5px;
-  max-width: 200px;
+  max-width: 300px;
+}
+
+.input-radio-button {
+  margin-right: 5px;
 }
 
 /* Style for the checkmark */
