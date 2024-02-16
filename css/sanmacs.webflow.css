@@ -6730,6 +6730,23 @@ figcaption {
   display: flex;
 }
 
+.div-block-4 {
+  margin-top: 64px;
+}
+
+.text-block-6, .keyhighlight { 
+  background-color: var(--primary-main); 
+  color: var(--neutral-200); 
+  text-align: center; 
+  border-radius: 20px; 
+  margin: 12px 24px; 
+  padding: 8px;
+  font-family: Plus Jakarta Display, sans-serif; 
+  font-weight: 400; 
+  text-decoration: none; 
+  display: block; 
+}
+
 .hero-container-colleges {
   max-width: 1342px;
   margin-left: auto;
