@@ -1,0 +1,133 @@
+.navigation{
+    margin: 0px auto;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+}
+.navigation .item{
+    position:absolute;
+}
+.user{
+    top:250px;
+    left:10px;
+}
+.home{
+   top:180px;
+   left:150px;
+}
+.shop{
+   top:150px;
+   left:340px;
+}
+.camera{
+   top:180px;
+   left:520px;
+}
+.fav{
+   top:260px;
+   left:660px;
+}
+
+.fac{
+   top:460px;
+   left:800px;
+}
+
+.Info{
+   top:360px;
+   left:750px;
+}
+
+
+a.icon{
+    width:52px;
+    height:52px;
+    position:absolute;
+    top:-5px;
+    left:-5px;
+    cursor:pointer;
+}
+.user a.icon{
+    background:transparent url(http://www.sanmacs.com/MCA/mca_images/circular_menu/images/user.png) no-repeat 0px 0px;
+}
+.home a.icon{
+    background:transparent url(http://www.sanmacs.com/MCA/mca_images/circular_menu/images/home.png) no-repeat 0px 0px;
+}
+.shop a.icon{
+    background:transparent url(http://www.sanmacs.com/MCA/mca_images/circular_menu/images/shop.png) no-repeat 0px 0px;
+}
+.camera a.icon{
+    background:transparent url(http://www.sanmacs.com/MCA/mca_images/circular_menu/images/camera.png) no-repeat 0px 0px;
+}
+.fav a.icon{
+    background:transparent url(http://www.sanmacs.com/MCA/mca_images/circular_menu/images/fav.png) no-repeat 0px 0px;
+}
+
+.fac a.icon{
+    background:transparent url(http://www.sanmacs.com/MCA/mca_images/circular_menu/images/fac.png) no-repeat 0px 0px;
+}
+
+.Info a.icon{
+    background:transparent url(http://www.sanmacs.com/MCA/mca_images/circular_menu/images/Info.png) no-repeat 0px 0px;
+}
+
+.navigation .item a.active{
+    background-position:0px -52px;
+}
+.item img.circle{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:52px;
+    height:52px;
+    opacity:0.1;
+}
+.item h2{
+    position:absolute;
+    width:160px;
+    height:22px;
+    color:#222;
+    font-size:13px;
+    top:0px;
+    left:40px;
+    text-indent:20px;
+    line-height:50px;
+    text-shadow:1px 1px 1px #fff;
+    text-transform: capitalize;
+}
+.item h2.active{
+    color:#C0302F;
+    text-shadow:1px 0px 1px #555;
+}
+.item ul{
+    list-style:none;
+    position:absolute;
+    top:60px;
+    left:55px;
+    display:none;
+}
+.item ul li a{
+    font-size:15px;
+    text-decoration:none;
+    letter-spacing:0px;
+    text-transform: capitalize;
+    color:#222;
+    padding:1px;
+    float:left;
+    clear:both;
+    width:100px;
+    text-shadow:1px 1px 1px #fff;
+}
+.item ul li a:hover{
+    background-color:#fff;
+    color:#444;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    -moz-box-shadow:1px 1px 4px #666;
+    -webkit-box-shadow:1px 1px 4px #666;
+    box-shadow:1px 1px 4px #666;
+}
+
